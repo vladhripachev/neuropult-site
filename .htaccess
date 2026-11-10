@@ -1,0 +1,11 @@
+# Локальная разработка: запрет кэширования, чтобы правки были видны сразу.
+# Перед публикацией на боевом сервере этот блок нужно убрать или заменить.
+<IfModule mod_headers.c>
+  <FilesMatch "\.(html|css|js|svg|webp|png|jpg|ico)$">
+    Header set Cache-Control "no-cache, no-store, must-revalidate"
+    Header set Pragma "no-cache"
+    Header set Expires "0"
+    Header unset ETag
+  </FilesMatch>
+</IfModule>
+FileETag None

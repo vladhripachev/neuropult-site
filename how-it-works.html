@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Как работает — Нейропульт</title>
+  <meta name="description" content="Как устроен Нейропульт: задача обычным языком, подбор агентов и инструментов, выполнение на сервере и контроль результата.">
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css?v=1792591641">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container site-header__inner">
+    <a href="index.html" class="logo" aria-label="Нейропульт — на главную"><img src="assets/images/logo.svg" alt="" width="28" height="28">Нейропульт</a>
+    <nav class="nav" aria-label="Основная навигация">
+      <a class="nav__link" href="features.html">Возможности</a>
+      <a class="nav__link is-active" href="how-it-works.html" aria-current="page">Как работает</a>
+      <a class="nav__link" href="agents.html">AI-сотрудники</a>
+      <a class="nav__link" href="solutions.html">Для кого</a>
+      <a class="nav__link" href="pricing.html">Тарифы</a>
+      <a class="nav__link" href="enterprise.html">Enterprise</a>
+    </nav>
+    <div class="header-actions">
+      <a class="login" href="login.html">Войти</a>
+      <a class="btn btn--primary btn--sm" href="demo.html">Запросить демо</a>
+      <button class="burger" type="button" aria-label="Меню" aria-expanded="false" aria-controls="mobile-menu"><svg class="i i--lg"><use href="assets/images/icons.svg#menu"/></svg></button>
+    </div>
+  </div>
+</header>
+<div class="mobile-menu" id="mobile-menu">
+  <a href="features.html">Возможности</a>
+  <a href="how-it-works.html" aria-current="page">Как работает</a>
+  <a href="agents.html">AI-сотрудники</a>
+  <a href="solutions.html">Для кого</a>
+  <a href="pricing.html">Тарифы</a>
+  <a href="enterprise.html">Enterprise</a>
+  <a href="login.html">Войти</a>
+  <a class="btn btn--primary btn--lg" href="demo.html">Запросить демо</a>
+</div>
+
+<main>
+
+  <section class="page-hero">
+    <div class="container page-hero__grid">
+      <div>
+        <nav class="breadcrumbs reveal" aria-label="Хлебные крошки"><a href="index.html">Главная</a><span>/</span><span>Как работает</span></nav>
+        <h1 class="page-hero__title reveal">Скажите, что нужно сделать. Остальное — на&nbsp;Нейропульте.</h1>
+        <p class="lead reveal reveal-d1">Управление строится вокруг естественного языка — текста и голоса. Система сама использует нужных агентов, сценарии, инструменты и интеграции, а вы видите каждый шаг.</p>
+        <div class="hero__actions reveal reveal-d2">
+          <a class="btn btn--primary btn--lg" href="demo.html">Обсудить пилот</a>
+          <a class="btn btn--ghost btn--lg" href="#architecture">Архитектура</a>
+        </div>
+      </div>
+      <div class="page-hero__visual reveal reveal-d2"><img class="float" src="assets/images/voice.webp" alt="Голосовые и текстовые команды" width="900" height="891"></div>
+    </div>
+  </section>
+
+  <!-- 4 шага -->
+  <section class="section section--tight">
+    <div class="container">
+      <div class="section-head reveal">
+        <h2 class="h2">От задачи до результата — четыре шага</h2>
+      </div>
+      <div class="grid grid--4">
+        <div class="card reveal"><span class="step__num" style="margin-bottom:20px">1</span><h3>Формулируете задачу</h3><p>Текстом или голосом, в пульте или в мессенджере. Можно приложить файлы и ссылки.</p></div>
+        <div class="card reveal reveal-d1"><span class="step__num" style="margin-bottom:20px">2</span><h3>Нейропульт строит план</h3><p>Подбирает AI-сотрудников, навыки и интеграции, показывает план работ.</p></div>
+        <div class="card reveal reveal-d2"><span class="step__num" style="margin-bottom:20px">3</span><h3>Работа идёт на сервере</h3><p>Задача выполняется в фоне. Критичные шаги ждут вашего подтверждения.</p></div>
+        <div class="card reveal reveal-d3"><span class="step__num" style="margin-bottom:20px;background:var(--brand);color:#fff;border-color:var(--brand)">4</span><h3>Результат и история</h3><p>Файлы, публикации и отчёты сохраняются вместе с полной историей действий.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Демо-диалог -->
+  <section class="section section--soft">
+    <div class="container split split--even">
+      <div class="chat reveal" data-chat>
+        <div class="chat__head"><img src="assets/images/logo.svg" alt="">Нейропульт<small>Онлайн</small></div>
+        <div class="chat__body">
+          <div class="msg msg--user">Каждый понедельник в 9:00 присылай отчёт по продажам за неделю из Bitrix24 — в Telegram мне и РОПу</div>
+          <div class="msg msg--bot"><b>Создаю регулярное задание:</b>
+            <ul>
+              <li><svg class="i"><use href="assets/images/icons.svg#check-circle"/></svg>Источник: Bitrix24 → сделки за 7 дней</li>
+              <li><svg class="i"><use href="assets/images/icons.svg#check-circle"/></svg>Исполнитель: Агент-аналитик</li>
+              <li><svg class="i"><use href="assets/images/icons.svg#check-circle"/></svg>Формат: сводка + XLSX-таблица</li>
+              <li><svg class="i"><use href="assets/images/icons.svg#check-circle"/></svg>Расписание: Пн, 09:00 → Telegram</li>
+            </ul>
+          </div>
+          <div class="msg msg--user">Отлично. А сейчас пришли за прошлую неделю</div>
+          <div class="msg msg--bot">Отчёт готов: выручка <b>+12%</b> к прошлой неделе, 3 сделки требуют внимания. Файл <b>Sales_W42.xlsx</b> отправлен.</div>
+        </div>
+        <div class="chat__input"><span>Напишите задачу…</span><span class="round"><svg class="i"><use href="assets/images/icons.svg#mic"/></svg></span><span class="round round--primary"><svg class="i"><use href="assets/images/icons.svg#send"/></svg></span></div>
+      </div>
+      <div class="reveal reveal-d1">
+        <span class="eyebrow"><svg class="i"><use href="assets/images/icons.svg#mic"/></svg>Пример диалога</span>
+        <h2 class="h2">Одна фраза превращается в регулярный процесс</h2>
+        <p class="lead muted" style="margin-top:16px">Не нужно настраивать интеграции, выбирать модели или писать сценарии вручную. Нейропульт превращает просьбу в задание с исполнителем, источниками данных и расписанием.</p>
+        <ul class="check-list">
+          <li><svg class="i"><use href="assets/images/icons.svg#check"/></svg>Задание можно открыть и отредактировать в пульте</li>
+          <li><svg class="i"><use href="assets/images/icons.svg#check"/></svg>Каждый запуск сохраняется в истории</li>
+          <li><svg class="i"><use href="assets/images/icons.svg#check"/></svg>Расписание можно остановить в один клик</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Архитектура -->
+  <section class="section" id="architecture">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow"><svg class="i"><use href="assets/images/icons.svg#layers"/></svg>Архитектура</span>
+        <h2 class="h2">AI-слой поверх существующей инфраструктуры</h2>
+        <p class="lead">Нейропульт не заменяет CRM, 1С, CMS и таск-трекеры. Он связывает каналы, AI-модели и системы компании в единый управляемый контур.</p>
+      </div>
+      <div class="layers">
+        <div class="layer reveal">
+          <div class="layer__label"><b>Каналы</b><small>Откуда приходят задачи</small></div>
+          <div class="layer__items"><span><svg class="i"><use href="assets/images/icons.svg#laptop"/></svg>Веб-пульт</span><span><svg class="i"><use href="assets/images/icons.svg#mic"/></svg>Голос</span><span><svg class="i"><use href="assets/images/icons.svg#send"/></svg>Telegram</span><span><svg class="i"><use href="assets/images/icons.svg#message"/></svg>MAX</span><span><svg class="i"><use href="assets/images/icons.svg#message"/></svg>WhatsApp</span><span><svg class="i"><use href="assets/images/icons.svg#plug"/></svg>API</span></div>
+        </div>
+        <div class="layers__arrow"><svg class="i"><use href="assets/images/icons.svg#arrow-right"/></svg></div>
+        <div class="layer layer--core reveal">
+          <div class="layer__label"><b>Нейропульт</b><small>Единый AI-контур компании</small></div>
+          <div class="layer__items"><span><svg class="i"><use href="assets/images/icons.svg#users"/></svg>AI-сотрудники</span><span><svg class="i"><use href="assets/images/icons.svg#list-checks"/></svg>Задания</span><span><svg class="i"><use href="assets/images/icons.svg#calendar"/></svg>Расписания</span><span><svg class="i"><use href="assets/images/icons.svg#workflow"/></svg>Сценарии</span><span><svg class="i"><use href="assets/images/icons.svg#sparkles"/></svg>Skills и MCP</span><span><svg class="i"><use href="assets/images/icons.svg#folder"/></svg>Файлы</span><span><svg class="i"><use href="assets/images/icons.svg#shield-check"/></svg>Права и аудит</span></div>
+        </div>
+        <div class="layers__arrow"><svg class="i"><use href="assets/images/icons.svg#arrow-right"/></svg></div>
+        <div class="layer reveal">
+          <div class="layer__label"><b>Системы компании</b><small>Где выполняется работа</small></div>
+          <div class="layer__items"><span><svg class="i"><use href="assets/images/icons.svg#users"/></svg>Bitrix24</span><span><svg class="i"><use href="assets/images/icons.svg#users"/></svg>amoCRM</span><span><svg class="i"><use href="assets/images/icons.svg#database"/></svg>1С</span><span><svg class="i"><use href="assets/images/icons.svg#globe"/></svg>Сайты</span><span><svg class="i"><use href="assets/images/icons.svg#folder"/></svg>Базы знаний</span><span><svg class="i"><use href="assets/images/icons.svg#git"/></svg>Репозитории</span><span><svg class="i"><use href="assets/images/icons.svg#server"/></svg>Серверы</span></div>
+        </div>
+        <div class="layers__arrow"><svg class="i"><use href="assets/images/icons.svg#arrow-right"/></svg></div>
+        <div class="layer reveal">
+          <div class="layer__label"><b>AI-модели</b><small>Чем выполняется работа</small></div>
+          <div class="layer__items"><span><svg class="i"><use href="assets/images/icons.svg#cloud"/></svg>Провайдеры Нейропульта — в облаке</span><span><svg class="i"><use href="assets/images/icons.svg#key"/></svg>Свои ключи — on-prem</span><span><svg class="i"><use href="assets/images/icons.svg#server"/></svg>Локальные LLM — on-prem</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Режимы запуска -->
+  <section class="section section--soft">
+    <div class="container">
+      <div class="section-head reveal">
+        <h2 class="h2">Три способа запустить работу</h2>
+        <p class="lead">Разово, по расписанию или по событию в ваших системах.</p>
+      </div>
+      <div class="grid grid--3">
+        <div class="card reveal"><span class="ico c-violet"><svg class="i"><use href="assets/images/icons.svg#zap"/></svg></span><h3>Разово</h3><p>«Подготовь КП для клиента по шаблону», «Проверь сайт на битые ссылки». Сделал — вернул результат.</p></div>
+        <div class="card reveal reveal-d1"><span class="ico c-green"><svg class="i"><use href="assets/images/icons.svg#calendar"/></svg></span><h3>По расписанию</h3><p>Ежедневный мониторинг упоминаний, еженедельные отчёты, ежемесячная выгрузка данных.</p></div>
+        <div class="card reveal reveal-d2"><span class="ico c-orange"><svg class="i"><use href="assets/images/icons.svg#activity"/></svg></span><h3>По событию</h3><p>Новая заявка в CRM, письмо от клиента, коммит в репозиторий — и сценарий запускается сам.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Пилот -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head reveal">
+        <h2 class="h2">Внедрение начинается с пилота</h2>
+        <p class="lead">Сопровождение и помощь с настройкой входят в подписку — мы проходим этот путь вместе с вами.</p>
+      </div>
+      <ol class="timeline reveal">
+        <li><span class="step__num">1</span>Выберите процесс</li>
+        <li><span class="step__num">2</span>Опишите задачу</li>
+        <li><span class="step__num">3</span>Подключите AI&#8209;сотрудника</li>
+        <li><span class="step__num">4</span>Запустите пилот</li>
+        <li><span class="step__num">5</span>Проверьте результат</li>
+        <li><span class="step__num">6</span>Отладьте процесс</li>
+        <li><span class="step__num">7</span>Масштабируйте на команду</li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="section section--tight" style="padding-top:0">
+    <div class="container">
+      <div class="cta cta--dark reveal">
+        <div>
+          <h2>Готовы попробовать на своём процессе?</h2>
+          <p>Расскажите о задаче — предложим сценарий пилота и покажем результат.</p>
+        </div>
+        <div class="hero__actions" style="margin-top:0"><a class="btn btn--white btn--lg" href="demo.html">Обсудить пилот</a></div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="logo"><img src="assets/images/logo.svg" alt="" width="28" height="28">Нейропульт</a>
+        <p>AI-контур для бизнеса. Пульт управления AI-сотрудниками компании.</p>
+      </div>
+      <div class="footer-col"><h4>Продукт</h4><ul><li><a href="features.html">Возможности</a></li><li><a href="how-it-works.html">Как работает</a></li><li><a href="agents.html">AI-сотрудники</a></li><li><a href="pricing.html">Тарифы</a></li></ul></div>
+      <div class="footer-col"><h4>Решения</h4><ul><li><a href="solutions.html">Для кого</a></li><li><a href="security.html">Безопасность</a></li><li><a href="enterprise.html">Enterprise-решения</a></li><li><a href="enterprise.html#plans">Тарифы On-Prem</a></li></ul></div>
+      <div class="footer-col"><h4>Компания</h4><ul><li><a href="demo.html">Запросить демо</a></li><li><a href="demo.html#contacts">Контакты</a></li><li><a href="login.html">Вход для клиентов</a></li></ul></div>
+      <div class="footer-col"><h4>Связаться</h4><ul><li><a href="mailto:hello@neuropult.ru">hello@neuropult.ru</a></li><li><a href="https://neuropult.ru">neuropult.ru</a></li></ul></div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span data-current-year>2026</span> Нейропульт. Все права защищены.</span>
+      <span><a href="#">Политика конфиденциальности</a> · <a href="#">Условия использования</a></span>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/main.js?v=1792591641" defer></script>
+</body>
+</html>

@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Запросить демо — Нейропульт</title>
+  <meta name="description" content="Запросите демонстрацию Нейропульта или обсудите пилот: покажем, как AI-сотрудники закроют реальный процесс вашей компании.">
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css?v=1792591641">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container site-header__inner">
+    <a href="index.html" class="logo" aria-label="Нейропульт — на главную"><img src="assets/images/logo.svg" alt="" width="28" height="28">Нейропульт</a>
+    <nav class="nav" aria-label="Основная навигация">
+      <a class="nav__link" href="features.html">Возможности</a>
+      <a class="nav__link" href="how-it-works.html">Как работает</a>
+      <a class="nav__link" href="agents.html">AI-сотрудники</a>
+      <a class="nav__link" href="solutions.html">Для кого</a>
+      <a class="nav__link" href="pricing.html">Тарифы</a>
+      <a class="nav__link" href="enterprise.html">Enterprise</a>
+    </nav>
+    <div class="header-actions">
+      <a class="login" href="login.html">Войти</a>
+      <a class="btn btn--primary btn--sm" href="demo.html">Запросить демо</a>
+      <button class="burger" type="button" aria-label="Меню" aria-expanded="false" aria-controls="mobile-menu"><svg class="i i--lg"><use href="assets/images/icons.svg#menu"/></svg></button>
+    </div>
+  </div>
+</header>
+<div class="mobile-menu" id="mobile-menu">
+  <a href="features.html">Возможности</a>
+  <a href="how-it-works.html">Как работает</a>
+  <a href="agents.html">AI-сотрудники</a>
+  <a href="solutions.html">Для кого</a>
+  <a href="pricing.html">Тарифы</a>
+  <a href="enterprise.html">Enterprise</a>
+  <a href="login.html">Войти</a>
+  <a class="btn btn--primary btn--lg" href="demo.html">Запросить демо</a>
+</div>
+
+<main>
+
+  <section class="page-hero" style="padding-bottom:56px">
+    <div class="container">
+      <nav class="breadcrumbs reveal" aria-label="Хлебные крошки"><a href="index.html">Главная</a><span>/</span><span>Запросить демо</span></nav>
+      <h1 class="page-hero__title reveal" style="max-width:820px">Обсудим пилот на&nbsp;вашем процессе</h1>
+      <p class="lead reveal reveal-d1" style="max-width:720px">Оставьте заявку — свяжемся в течение рабочего дня, покажем Нейропульт в работе и предложим, с какой задачи начать.</p>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:0">
+    <div class="container split split--form">
+
+      <div class="card form-card reveal">
+        <form class="form" data-validate novalidate>
+          <div class="field">
+            <label for="f-name">Имя</label>
+            <input id="f-name" name="name" type="text" placeholder="Как к вам обращаться" required autocomplete="name">
+            <span class="field__error">Укажите имя</span>
+          </div>
+          <div class="field">
+            <label for="f-company">Компания</label>
+            <input id="f-company" name="company" type="text" placeholder="Название компании" autocomplete="organization">
+          </div>
+          <div class="field">
+            <label for="f-phone">Телефон</label>
+            <input id="f-phone" name="phone" type="tel" placeholder="+7 (999) 000-00-00" required autocomplete="tel">
+            <span class="field__error">Проверьте номер телефона</span>
+          </div>
+          <div class="field">
+            <label for="f-email">Email</label>
+            <input id="f-email" name="email" type="email" placeholder="you@company.ru" required autocomplete="email">
+            <span class="field__error">Проверьте email</span>
+          </div>
+          <div class="field">
+            <label for="f-plan">Интересует</label>
+            <select id="f-plan" name="plan">
+              <option value="pilot">Пилот / демонстрация</option>
+              <optgroup label="Облачные тарифы">
+                <option value="start">Старт</option>
+                <option value="standard">Стандарт</option>
+                <option value="max">Максимум</option>
+              </optgroup>
+              <optgroup label="На своих серверах">
+                <option value="corporate">Корпоративный</option>
+                <option value="extended">Расширенный</option>
+                <option value="custom">Индивидуальный</option>
+              </optgroup>
+            </select>
+          </div>
+          <div class="field">
+            <label for="f-size">Размер команды</label>
+            <select id="f-size" name="size">
+              <option>1 человек</option>
+              <option selected>2–10 человек</option>
+              <option>11–50 человек</option>
+              <option>51–250 человек</option>
+              <option>Более 250</option>
+            </select>
+          </div>
+          <div class="field field--full">
+            <label>Какие задачи хотите поручить AI</label>
+            <div class="choice-group">
+              <label class="choice"><input type="checkbox" name="tasks" value="sites"><span>Сайты</span></label>
+              <label class="choice"><input type="checkbox" name="tasks" value="content" checked><span>Контент и SMM</span></label>
+              <label class="choice"><input type="checkbox" name="tasks" value="crm"><span>CRM и продажи</span></label>
+              <label class="choice"><input type="checkbox" name="tasks" value="analytics"><span>Аналитика</span></label>
+              <label class="choice"><input type="checkbox" name="tasks" value="docs"><span>Документы</span></label>
+              <label class="choice"><input type="checkbox" name="tasks" value="dev"><span>Код и серверы</span></label>
+              <label class="choice"><input type="checkbox" name="tasks" value="bots"><span>Боты и поддержка</span></label>
+            </div>
+          </div>
+          <div class="field field--full">
+            <label for="f-msg">Комментарий</label>
+            <textarea id="f-msg" name="message" placeholder="Опишите процесс, который хотели бы автоматизировать"></textarea>
+          </div>
+          <label class="consent field--full"><input type="checkbox" name="consent" checked><span>Соглашаюсь на обработку персональных данных в соответствии с <a href="#">политикой конфиденциальности</a></span></label>
+          <div class="field--full"><button class="btn btn--primary btn--lg btn--block" type="submit">Отправить заявку</button></div>
+        </form>
+        <div class="form-success" role="status">
+          <span class="ico ico--lg c-green"><svg class="i"><use href="assets/images/icons.svg#check-circle"/></svg></span>
+          <h2 class="h3" style="font-size:28px;margin-bottom:10px">Заявка отправлена</h2>
+          <p class="muted">Спасибо! Мы свяжемся с вами в течение рабочего дня.</p>
+          <a class="btn btn--ghost" style="margin-top:24px" href="index.html">На главную</a>
+        </div>
+      </div>
+
+      <aside class="contact-side">
+        <div class="card reveal reveal-d1">
+          <h3 style="font-size:20px;margin-bottom:18px">Что будет дальше</h3>
+          <div class="steps" style="grid-template-columns:1fr;gap:18px">
+            <div class="step"><span class="step__num" style="width:40px;height:40px;font-size:16px">1</span><div><h3 style="font-size:16px;margin-top:0">Знакомство</h3><p>Короткий звонок: разберём задачи и процессы.</p></div></div>
+            <div class="step"><span class="step__num" style="width:40px;height:40px;font-size:16px">2</span><div><h3 style="font-size:16px;margin-top:0">Демонстрация</h3><p>Покажем Нейропульт на примере вашей задачи.</p></div></div>
+            <div class="step"><span class="step__num" style="width:40px;height:40px;font-size:16px;background:var(--brand);color:#fff;border-color:var(--brand)">3</span><div><h3 style="font-size:16px;margin-top:0">Пилот</h3><p>Запустим AI-сотрудника на одном процессе.</p></div></div>
+          </div>
+        </div>
+        <div class="card reveal reveal-d2" id="contacts">
+          <h3 style="font-size:20px;margin-bottom:16px">Контакты</h3>
+          <div class="card--row" style="align-items:center;margin-bottom:14px"><span class="ico ico--sm c-violet"><svg class="i"><use href="assets/images/icons.svg#mail"/></svg></span><div><small class="muted">Email</small><br><a class="text-brand" style="font-weight:600" href="mailto:hello@neuropult.ru">hello@neuropult.ru</a></div></div>
+          <div class="card--row" style="align-items:center"><span class="ico ico--sm c-violet"><svg class="i"><use href="assets/images/icons.svg#globe"/></svg></span><div><small class="muted">Сайт</small><br><a class="text-brand" style="font-weight:600" href="https://neuropult.ru">neuropult.ru</a></div></div>
+        </div>
+      </aside>
+
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="logo"><img src="assets/images/logo.svg" alt="" width="28" height="28">Нейропульт</a>
+        <p>AI-контур для бизнеса. Пульт управления AI-сотрудниками компании.</p>
+      </div>
+      <div class="footer-col"><h4>Продукт</h4><ul><li><a href="features.html">Возможности</a></li><li><a href="how-it-works.html">Как работает</a></li><li><a href="agents.html">AI-сотрудники</a></li><li><a href="pricing.html">Тарифы</a></li></ul></div>
+      <div class="footer-col"><h4>Решения</h4><ul><li><a href="solutions.html">Для кого</a></li><li><a href="security.html">Безопасность</a></li><li><a href="enterprise.html">Enterprise-решения</a></li><li><a href="enterprise.html#plans">Тарифы On-Prem</a></li></ul></div>
+      <div class="footer-col"><h4>Компания</h4><ul><li><a href="demo.html">Запросить демо</a></li><li><a href="demo.html#contacts">Контакты</a></li><li><a href="login.html">Вход для клиентов</a></li></ul></div>
+      <div class="footer-col"><h4>Связаться</h4><ul><li><a href="mailto:hello@neuropult.ru">hello@neuropult.ru</a></li><li><a href="https://neuropult.ru">neuropult.ru</a></li></ul></div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span data-current-year>2026</span> Нейропульт. Все права защищены.</span>
+      <span><a href="#">Политика конфиденциальности</a> · <a href="#">Условия использования</a></span>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/main.js?v=1792591641" defer></script>
+</body>
+</html>

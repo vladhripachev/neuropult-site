@@ -1,0 +1,722 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<title>Нейропульт — презентация</title>
+<style>
+@font-face { font-family: "Onest"; src: url("fonts/Onest.ttf") format("truetype"); font-weight: 100 900; }
+@page { size: 1920px 1080px; margin: 0; }
+:root {
+  --brand: #372AAC; --brand-600: #4136C4; --brand-500: #5649DB; --brand-400: #7C71EC;
+  --brand-200: #CFCBFB; --brand-100: #E8E6FE; --brand-50: #F4F3FF;
+  --ink: #0E1024; --text: #3B3F58; --muted: #6E7291; --faint: #9A9DB5;
+  --line: #E7E7F2; --line-soft: #F0F0F7; --bg-soft: #F8F8FE; --bg-tint: #F3F2FD;
+  --green: #16A34A; --green-50: #E9F8EF; --orange: #D97706; --orange-50: #FEF3E2;
+  --blue: #2563EB; --blue-50: #E8F0FE; --teal: #0D9488; --teal-50: #E3F6F4;
+  --pink: #DB2777; --pink-50: #FDE9F2; --red: #DC2626; --red-50: #FDECEC;
+  --shadow: 0 2px 6px rgba(30,24,90,.04), 0 10px 30px rgba(30,24,90,.06);
+  --shadow-lg: 0 4px 12px rgba(30,24,90,.05), 0 30px 80px rgba(40,30,120,.12);
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { background: #fff; }
+body { font-family: "Onest", system-ui, sans-serif; color: var(--text); -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+h1, h2, h3, h4 { color: var(--ink); font-weight: 700; letter-spacing: -0.03em; line-height: 1.05; }
+b, strong { color: var(--ink); font-weight: 600; }
+
+.slide { width: 1920px; height: 1080px; position: relative; overflow: hidden; page-break-after: always; break-after: page; background: #fff; padding: 150px 120px 120px; }
+.slide:last-child { page-break-after: auto; break-after: auto; }
+.slide--soft { background: var(--bg-soft); }
+.glow::before { content: ""; position: absolute; inset: 0; z-index: 0; pointer-events: none;
+  background:
+    radial-gradient(900px 600px at 8% 0%, rgba(176,160,255,.35), transparent 60%),
+    radial-gradient(800px 600px at 100% 100%, rgba(140,190,255,.25), transparent 60%),
+    radial-gradient(700px 500px at 70% 10%, rgba(230,200,255,.35), transparent 60%); }
+.slide > * { position: relative; z-index: 1; }
+
+/* chrome: logo + page num */
+.top { position: absolute !important; top: 56px; left: 120px; right: 120px; display: flex; align-items: center; justify-content: space-between; z-index: 5; }
+.logo { display: flex; align-items: center; gap: 14px; font-size: 30px; font-weight: 700; color: var(--ink); letter-spacing: -0.03em; }
+.logo svg { width: 40px; height: 40px; }
+.pnum { font-size: 20px; font-weight: 600; color: var(--faint); letter-spacing: .02em; }
+.pnum b { color: var(--brand-500); }
+.foot { position: absolute !important; bottom: 48px; left: 120px; right: 120px; display: flex; justify-content: space-between; font-size: 18px; color: var(--faint); z-index: 5; }
+
+.eyebrow { display: inline-flex; align-items: center; gap: 10px; padding: 10px 20px; border-radius: 999px; background: var(--brand-50); color: var(--brand); font-size: 21px; font-weight: 600; letter-spacing: -0.005em; margin-bottom: 28px; }
+.eyebrow .i { width: 22px; height: 22px; }
+.h2 { font-size: 76px; }
+.lead { font-size: 30px; line-height: 1.45; color: var(--muted); margin-top: 26px; max-width: 1150px; }
+.accent { color: var(--brand-500); }
+.grad { color: var(--brand-500); }
+
+.i { width: 24px; height: 24px; fill: none; stroke: currentColor; }
+.ico { width: 72px; height: 72px; border-radius: 20px; display: grid; place-items: center; flex: none; background: var(--brand-50); color: var(--brand-500); }
+.ico .i { width: 34px; height: 34px; }
+.ico--sm { width: 52px; height: 52px; border-radius: 15px; }
+.ico--sm .i { width: 26px; height: 26px; }
+.c-violet { background: var(--brand-50); color: var(--brand-500); }
+.c-green { background: var(--green-50); color: var(--green); }
+.c-blue { background: var(--blue-50); color: var(--blue); }
+.c-orange { background: var(--orange-50); color: var(--orange); }
+.c-teal { background: var(--teal-50); color: var(--teal); }
+.c-pink { background: var(--pink-50); color: var(--pink); }
+.c-red { background: var(--red-50); color: var(--red); }
+
+.card { background: #fff; border: 1px solid var(--line); border-radius: 28px; padding: 36px; }
+.card h3 { font-size: 32px; letter-spacing: -0.02em; line-height: 1.15; }
+.card p { font-size: 22px; line-height: 1.45; color: var(--muted); margin-top: 10px; }
+.chip { display: inline-flex; align-items: center; gap: 12px; padding: 16px 22px; border-radius: 18px; background: #fff; border: 1px solid var(--line); font-size: 22px; font-weight: 500; color: var(--ink); line-height: 1.2; }
+.chip .i { color: var(--brand); width: 26px; height: 26px; }
+.tag { display: inline-block; padding: 7px 14px; border-radius: 10px; background: var(--bg-tint); color: var(--brand); font-size: 17px; font-weight: 600; }
+.badge { display: inline-flex; align-items: center; gap: 6px; padding: 6px 14px; border-radius: 999px; font-size: 17px; font-weight: 600; white-space: nowrap; }
+.badge--work { background: var(--brand-50); color: var(--brand-500); }
+.badge--done { background: var(--green-50); color: var(--green); }
+.badge--plan { background: var(--orange-50); color: var(--orange); }
+.btn { display: inline-flex; align-items: center; gap: 12px; padding: 24px 40px; border-radius: 18px; font-size: 26px; font-weight: 700; letter-spacing: -0.01em; }
+.btn--primary { background: var(--brand); color: #fff; }
+.btn--ghost { background: #fff; color: var(--ink); border: 1px solid var(--line); }
+.dot { width: 12px; height: 12px; border-radius: 50%; background: var(--green); outline: 5px solid var(--green-50); display: inline-block; flex: none; }
+.bar { height: 10px; border-radius: 99px; background: var(--line-soft); overflow: hidden; }
+.bar > i { display: block; height: 100%; border-radius: 99px; background: linear-gradient(90deg, var(--brand-500), var(--brand-400)); }
+.file { width: 54px; height: 54px; border-radius: 14px; display: grid; place-items: center; font-size: 13px; font-weight: 700; flex: none; }
+.file--pdf { background: var(--red-50); color: var(--red); }
+.file--docx { background: var(--blue-50); color: var(--blue); }
+.file--xlsx { background: var(--green-50); color: var(--green); }
+.row { display: flex; align-items: center; gap: 18px; }
+.check { color: var(--green); width: 30px; height: 30px; flex: none; }
+
+/* ---------- 01 cover ---------- */
+.cover { padding: 0; background: #fff url("img/hero-bg.webp") center/cover no-repeat; }
+.cover::before { background:
+  radial-gradient(1000px 700px at 0% 0%, rgba(176,160,255,.45), transparent 60%),
+  radial-gradient(900px 700px at 100% 100%, rgba(150,200,255,.35), transparent 60%),
+  radial-gradient(700px 600px at 75% 30%, rgba(220,190,255,.45), transparent 60%); }
+.cover__in { position: absolute; left: 120px; top: 230px; width: 1040px; }
+.cover h1 { font-size: 112px; line-height: .98; letter-spacing: -0.045em; }
+.cover .lead { font-size: 32px; max-width: 900px; margin-top: 40px; color: var(--text); }
+.cover__chips { display: flex; gap: 16px; margin-top: 56px; flex-wrap: wrap; }
+.cover__img { position: absolute; right: 50px; top: 210px; width: 720px; }
+
+/* ---------- 02 steps ---------- */
+.steps { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 40px; margin-top: 70px; }
+.step { position: relative; display: flex; flex-direction: column; padding: 40px; min-height: 520px; }
+.step__n { width: 64px; height: 64px; border-radius: 50%; background: var(--brand); color: #fff; display: grid; place-items: center; font-size: 30px; font-weight: 700; margin-bottom: 30px; outline: 10px solid var(--brand-50); }
+.step h3 { font-size: 38px; }
+.step p { font-size: 24px; }
+.step__ui { margin-top: auto; background: var(--bg-soft); border: 1px solid var(--line); border-radius: 22px; padding: 24px; }
+.step__arrow { position: absolute; right: -36px; top: 66px; width: 32px; height: 32px; color: var(--brand-400); z-index: 3; }
+.input { background: #fff; border: 1px solid var(--line); border-radius: 16px; padding: 18px 20px; font-size: 21px; color: var(--ink); display: flex; align-items: center; gap: 14px; }
+.input .mic { margin-left: auto; width: 44px; height: 44px; border-radius: 12px; background: var(--brand); color: #fff; display: grid; place-items: center; flex: none; }
+.input .mic .i { width: 22px; height: 22px; }
+
+/* ---------- 03 dashboard ---------- */
+.dash { margin-top: 56px; display: grid; grid-template-columns: 250px 1fr; background: #fff; border: 1px solid var(--line); border-radius: 32px; overflow: hidden; height: 640px; }
+.dash__side { background: var(--bg-soft); border-right: 1px solid var(--line); padding: 28px 18px; }
+.dash__side .logo svg { width: 42px; height: 42px; }
+.dash__nav { margin-top: 32px; display: flex; flex-direction: column; gap: 6px; }
+.dash__nav div { display: flex; align-items: center; gap: 14px; padding: 13px 16px; border-radius: 12px; font-size: 19px; color: var(--muted); font-weight: 500; }
+.dash__nav div .i { width: 21px; height: 21px; }
+.dash__nav .on { background: var(--brand-50); color: var(--brand); font-weight: 600; }
+.dash__main { padding: 28px 32px; display: flex; flex-direction: column; gap: 22px; }
+.dash__head { display: flex; align-items: center; justify-content: space-between; }
+.dash__head h4 { font-size: 30px; }
+.dash__cols { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 20px; flex: 1; }
+.col { border: 1px solid var(--line); border-radius: 20px; padding: 20px; display: flex; flex-direction: column; gap: 12px; }
+.col__h { display: flex; justify-content: space-between; font-size: 20px; font-weight: 700; color: var(--ink); margin-bottom: 4px; }
+.col__h span { font-size: 16px; color: var(--brand-500); font-weight: 600; }
+.it { border: 1px solid var(--line-soft); border-radius: 14px; padding: 14px 16px; display: flex; gap: 14px; align-items: center; background: #fff; }
+.it b { font-size: 18px; display: block; line-height: 1.25; }
+.it small { font-size: 15px; color: var(--faint); display: block; margin-top: 3px; }
+.it .badge { margin-left: auto; font-size: 14px; padding: 5px 11px; }
+.it .file { width: 46px; height: 46px; font-size: 12px; border-radius: 12px; }
+.stats { display: grid; grid-template-columns: repeat(4, 1fr); border: 1px solid var(--line); border-radius: 20px; padding: 18px 24px; }
+.stat { display: flex; align-items: center; gap: 16px; }
+.stat .i { width: 34px; height: 34px; color: var(--brand-500); }
+.stat b { font-size: 30px; display: block; line-height: 1; }
+.stat small { font-size: 16px; color: var(--muted); }
+
+/* ---------- 04 staff ---------- */
+.staff { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 40px; width: 1200px; }
+.staff .card { padding: 24px 28px; }
+.staff .ico { width: 60px; height: 60px; border-radius: 17px; }
+.staff .card h3 { font-size: 28px; margin-top: 16px; }
+.staff .card p { font-size: 20px; margin-top: 6px; }
+.tags { display: flex; gap: 8px; margin-top: 14px; flex-wrap: wrap; }
+.staff__img { position: absolute; right: 80px; top: 420px; width: 520px; }
+
+/* ---------- 05 schedule ---------- */
+.modes { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; margin-top: 64px; }
+.mode { display: flex; flex-direction: column; min-height: 520px; }
+.mode .ico { margin-bottom: 26px; }
+.mode h3 { font-size: 36px; }
+.mode p { font-size: 23px; }
+.mode__ui { margin-top: auto; display: flex; flex-direction: column; gap: 12px; padding-top: 28px; }
+.mini { background: var(--bg-soft); border: 1px solid var(--line); border-radius: 16px; padding: 18px 20px; display: flex; align-items: center; gap: 14px; font-size: 20px; color: var(--ink); font-weight: 500; }
+.mini small { display: block; color: var(--muted); font-size: 16px; font-weight: 400; margin-top: 2px; }
+.mini .i { color: var(--brand-500); width: 24px; height: 24px; flex: none; }
+.mini .n { width: 34px; height: 34px; border-radius: 10px; background: #fff; border: 1px solid var(--line); display: grid; place-items: center; font-size: 16px; font-weight: 700; color: var(--brand); flex: none; }
+.btn-mini { background: var(--brand); color: #fff; border-radius: 14px; padding: 16px; text-align: center; font-size: 20px; font-weight: 600; }
+.sched__img { position: absolute; right: 120px; top: 120px; width: 330px; }
+
+/* ---------- 06 routine ---------- */
+.routine { display: grid; grid-template-columns: repeat(4, 1fr); gap: 26px; margin-top: 64px; }
+.routine .card { padding: 36px 32px; min-height: 290px; }
+.routine .card h3 { font-size: 32px; margin-top: 26px; }
+.routine .card p { font-size: 21px; }
+
+/* ---------- 07 dark background ---------- */
+.dark { background: #0F0C2E; color: #C9C6F0; }
+.dark::before { content: ""; position: absolute; inset: 0; z-index: 0;
+  background: radial-gradient(900px 700px at 85% 40%, rgba(86,73,219,.55), transparent 65%),
+              radial-gradient(700px 500px at 0% 100%, rgba(55,42,172,.6), transparent 60%),
+              radial-gradient(600px 400px at 40% 0%, rgba(124,113,236,.25), transparent 60%); }
+.dark h2, .dark h3, .dark b, .dark .logo { color: #fff; }
+.dark .lead { color: #A9A5DA; }
+.dark .eyebrow { background: rgba(255,255,255,.08); color: #CFCBFB; border: 1px solid rgba(255,255,255,.12); }
+.dark .pnum { color: #6E6AA6; } .dark .pnum b { color: #CFCBFB; } .dark .foot { color: #6E6AA6; }
+.bg-feats { display: flex; flex-direction: column; gap: 22px; margin-top: 60px; width: 760px; }
+.bg-feat { display: flex; gap: 24px; align-items: center; padding: 26px 30px; border-radius: 24px; background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.1); }
+.bg-feat .ico { background: rgba(124,113,236,.2); color: #CFCBFB; }
+.bg-feat h3 { font-size: 30px; }
+.bg-feat p { font-size: 21px; color: #A9A5DA; margin-top: 4px; }
+.night { position: absolute; right: 120px; top: 190px; width: 820px; height: 760px; }
+.night img { position: absolute; left: 0; top: 60px; width: 760px; }
+.status { position: absolute; right: 0; top: 0; width: 470px; background: #fff; border-radius: 28px; padding: 30px; color: var(--text); }
+.status h4 { font-size: 24px; color: var(--ink); margin-bottom: 10px; letter-spacing: -0.02em; }
+.status .r { display: flex; align-items: center; gap: 14px; padding: 15px 0; border-bottom: 1px solid var(--line-soft); font-size: 20px; }
+.status .r:last-child { border-bottom: 0; }
+.status .r .i { width: 22px; height: 22px; color: var(--muted); }
+.status .r b { margin-left: auto; font-size: 22px; color: var(--ink); }
+.jobs { position: absolute; left: 30px; bottom: 0; width: 560px; background: #fff; border-radius: 24px; padding: 24px 26px; display: flex; flex-direction: column; gap: 16px; }
+.job { display: grid; grid-template-columns: 1fr auto; gap: 8px 14px; align-items: center; }
+.job b { font-size: 19px; color: var(--ink); }
+.job small { font-size: 16px; color: var(--muted); }
+.job .bar { grid-column: 1 / -1; height: 8px; }
+
+/* ---------- 08 integrations ---------- */
+.integr { display: grid; grid-template-columns: 1fr 540px 1fr; align-items: center; gap: 40px; margin-top: 30px; }
+.integr__col { display: flex; flex-direction: column; gap: 18px; }
+.integr__col .chip { padding: 18px 26px; border-radius: 22px; gap: 20px; }
+.integr__col .chip b { display: block; font-size: 24px; }
+.integr__col .chip small { display: block; font-size: 18px; color: var(--muted); margin-top: 4px; font-weight: 400; }
+.integr__col--r .chip { flex-direction: row-reverse; text-align: right; }
+.integr img { width: 540px; }
+
+/* ---------- 09 personas ---------- */
+.personas { display: grid; grid-template-columns: repeat(5, 1fr); gap: 22px; margin-top: 54px; }
+.persona { background: #fff; border: 1px solid var(--line); border-radius: 26px; overflow: hidden; display: flex; flex-direction: column; height: 600px; }
+.persona img { width: 100%; height: 270px; object-fit: cover; display: block; }
+.persona__b { padding: 24px 24px 26px; display: flex; flex-direction: column; flex: 1; }
+.persona__who { font-size: 17px; font-weight: 700; color: var(--brand-500); text-transform: uppercase; letter-spacing: .06em; }
+.persona h3 { font-size: 26px; margin-top: 10px; letter-spacing: -0.02em; line-height: 1.15; }
+.persona .say { margin-top: auto; background: var(--bg-tint); border-radius: 16px 16px 16px 4px; padding: 16px 18px; font-size: 18px; line-height: 1.35; color: var(--ink); font-weight: 500; position: relative; }
+.persona .say::before { content: "«"; } .persona .say::after { content: "»"; }
+
+/* ---------- 10 deploy ---------- */
+.deploy { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-top: 44px; }
+.dep { display: grid; grid-template-columns: 260px 1fr; gap: 36px; align-items: center; padding: 40px; }
+.dep img { width: 260px; height: 300px; object-fit: contain; }
+.dep h3 { font-size: 42px; }
+.dep p { font-size: 23px; margin-top: 16px; }
+.dep ul { list-style: none; margin-top: 26px; display: flex; flex-direction: column; gap: 14px; }
+.dep li { display: flex; gap: 14px; align-items: center; font-size: 22px; color: var(--ink); font-weight: 500; }
+.dep li .i { color: var(--green); width: 26px; height: 26px; flex: none; }
+.dep .lbl { display: inline-block; font-size: 17px; font-weight: 700; color: var(--brand-500); text-transform: uppercase; letter-spacing: .06em; margin-bottom: 14px; }
+.note { margin-top: 30px; display: flex; align-items: center; gap: 18px; font-size: 24px; color: var(--text); background: #fff; border: 1px dashed var(--brand-200); border-radius: 20px; padding: 24px 30px; }
+.note .i { color: var(--brand-500); width: 30px; height: 30px; flex: none; }
+
+/* ---------- 11 control ---------- */
+.ctrl { display: grid; grid-template-columns: 560px 1fr; gap: 60px; margin-top: 30px; align-items: center; }
+.ctrl img { width: 560px; }
+.ctrl__grid { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; }
+.ctrl__grid .card { display: flex; gap: 22px; align-items: flex-start; padding: 28px; }
+.ctrl__grid .card h3 { font-size: 27px; }
+.ctrl__grid .card p { font-size: 20px; margin-top: 6px; }
+.quote { margin-top: 26px; font-size: 30px; font-weight: 600; color: var(--brand); letter-spacing: -0.02em; display: flex; gap: 16px; align-items: center; }
+.quote::before { content: ""; width: 60px; height: 4px; border-radius: 4px; background: var(--brand-400); }
+
+/* ---------- 12 pricing ---------- */
+.prices { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; margin-top: 50px; }
+.price { padding: 40px; display: flex; flex-direction: column; position: relative; }
+.price--hot { border: 2px solid var(--brand-500); }
+.price__flag { position: absolute; top: -18px; left: 40px; background: var(--brand); color: #fff; font-size: 17px; font-weight: 700; padding: 8px 16px; border-radius: 999px; }
+.price h3 { font-size: 40px; }
+.price .for { font-size: 21px; color: var(--muted); margin-top: 8px; }
+.price .sum { font-size: 64px; font-weight: 700; color: var(--ink); letter-spacing: -0.04em; margin-top: 26px; line-height: 1; }
+.price .sum small { font-size: 26px; color: var(--muted); font-weight: 500; letter-spacing: 0; }
+.price .year { font-size: 19px; color: var(--muted); margin-top: 12px; }
+.price .year b { color: var(--green); }
+.res { margin-top: 28px; }
+.res__lbl { display: flex; justify-content: space-between; font-size: 18px; font-weight: 600; color: var(--ink); margin-bottom: 10px; }
+.res__lbl span { color: var(--muted); font-weight: 500; }
+.cells { display: grid; grid-template-columns: repeat(10, 1fr); gap: 5px; }
+.cells i { height: 22px; border-radius: 5px; background: var(--line-soft); }
+.cells i.on { background: linear-gradient(180deg, var(--brand-400), var(--brand-500)); }
+.battery { margin-top: 36px; display: grid; grid-template-columns: 220px 1fr 1fr 1fr; gap: 36px; align-items: center; background: var(--bg-tint); border-radius: 28px; padding: 22px 44px; }
+.battery img { width: 210px; margin: -40px 0; }
+.battery h4 { font-size: 30px; }
+.battery p { font-size: 20px; color: var(--muted); margin-top: 6px; line-height: 1.4; }
+.big-n { font-size: 56px; font-weight: 700; color: var(--brand); letter-spacing: -0.04em; line-height: 1; }
+
+/* ---------- 13 enterprise ---------- */
+.ent { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 26px; margin-top: 40px; }
+.ent .card { padding: 34px; }
+.ent .tier { font-size: 30px; }
+.ent .for { font-size: 19px; color: var(--muted); margin-top: 8px; min-height: 54px; line-height: 1.4; }
+.ent .sum { font-size: 48px; font-weight: 700; color: var(--ink); letter-spacing: -0.035em; margin-top: 18px; }
+.ent .sum small { font-size: 22px; color: var(--muted); font-weight: 500; letter-spacing: 0; }
+.ent ul { list-style: none; margin-top: 18px; display: flex; flex-direction: column; gap: 10px; border-top: 1px solid var(--line-soft); padding-top: 18px; }
+.ent li { font-size: 19px; color: var(--text); display: flex; gap: 12px; align-items: center; line-height: 1.3; }
+.ent li .i { color: var(--brand-500); width: 22px; height: 22px; flex: none; }
+.ent-why { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; margin-top: 26px; }
+.ent-why div { display: flex; gap: 16px; align-items: center; font-size: 21px; color: var(--ink); font-weight: 600; line-height: 1.25; }
+.ent-why small { display: block; color: var(--muted); font-weight: 400; font-size: 17px; margin-top: 2px; }
+.ent__img { position: absolute; right: 140px; top: 90px; width: 330px; }
+
+/* ---------- 14 pilot ---------- */
+.path { position: relative; display: grid; grid-template-columns: repeat(7, 1fr); gap: 18px; margin-top: 110px; }
+.path::before { content: ""; position: absolute; left: 6%; right: 6%; top: 44px; height: 4px; border-radius: 4px; background: linear-gradient(90deg, var(--brand-200), var(--brand-500)); }
+.pstep { text-align: center; position: relative; }
+.pstep .n { width: 92px; height: 92px; margin: 0 auto; border-radius: 50%; background: #fff; border: 3px solid var(--brand-200); display: grid; place-items: center; font-size: 36px; font-weight: 700; color: var(--brand); }
+.pstep:last-child .n { background: var(--brand); color: #fff; border-color: var(--brand); outline: 12px solid var(--brand-50); }
+.pstep h3 { font-size: 26px; margin-top: 28px; line-height: 1.2; letter-spacing: -0.02em; }
+.pstep p { font-size: 18px; color: var(--muted); margin-top: 10px; line-height: 1.4; }
+.pilot__img { position: absolute; right: 140px; top: 120px; width: 380px; }
+.pilot-res { display: grid; grid-template-columns: repeat(3, 1fr); gap: 26px; margin-top: 90px; }
+.pilot-res .card { display: flex; gap: 22px; align-items: center; padding: 28px 32px; }
+.pilot-res .card h3 { font-size: 26px; }
+.pilot-res .card p { font-size: 19px; margin-top: 4px; }
+
+.pilot-cta { margin-top: 90px; display: flex; align-items: center; gap: 28px; background: #fff; border: 1px solid var(--line); border-radius: 28px; padding: 32px 40px; }
+.pilot-cta h3 { font-size: 32px; letter-spacing: -0.02em; }
+.pilot-cta p { font-size: 22px; color: var(--muted); margin-top: 6px; }
+.pilot-cta .btn { margin-left: auto; white-space: nowrap; }
+/* ---------- 15 cta ---------- */
+.cta { background: linear-gradient(135deg, #2A1F94 0%, #372AAC 45%, #5649DB 100%); padding: 0; }
+.cta::before { content: ""; position: absolute; inset: 0; z-index: 0;
+  background: radial-gradient(800px 600px at 85% 20%, rgba(255,255,255,.18), transparent 60%),
+              radial-gradient(700px 500px at 0% 100%, rgba(140,120,255,.4), transparent 60%); }
+.cta .logo { color: #fff; }
+.cta .pnum { color: rgba(255,255,255,.5); } .cta .pnum b { color: #fff; }
+.cta__in { position: absolute; left: 120px; top: 250px; width: 1050px; }
+.cta h2 { color: #fff; font-size: 104px; line-height: 1; letter-spacing: -0.045em; }
+.cta .lead { color: rgba(255,255,255,.78); font-size: 32px; max-width: 900px; margin-top: 36px; }
+.cta .btns { display: flex; gap: 20px; margin-top: 60px; }
+.cta .btn--primary { background: #fff; color: var(--brand); }
+.cta .btn--ghost { background: rgba(255,255,255,.1); color: #fff; border: 1px solid rgba(255,255,255,.3); }
+.contacts { position: absolute; left: 120px; bottom: 90px; display: flex; gap: 70px; }
+.contacts div { display: flex; gap: 18px; align-items: center; }
+.contacts .ico { background: rgba(255,255,255,.12); color: #fff; width: 64px; height: 64px; }
+.contacts small { display: block; color: rgba(255,255,255,.6); font-size: 18px; }
+.contacts b { color: #fff; font-size: 28px; }
+.cta__img { position: absolute; right: 30px; top: 170px; width: 760px; }
+</style>
+</head>
+<body>
+<!--ICONS-->
+
+<!-- ================= 01 COVER ================= -->
+<section class="slide cover glow">
+  <div class="top"><div class="logo">%LOGO% Нейропульт</div><div class="pnum">neuropult.ru</div></div>
+  <div class="cover__in">
+    <div class="eyebrow"><svg class="i"><use href="#sparkles"/></svg>Корпоративный AI-контур для бизнеса</div>
+    <h1>Пульт управления <span class="grad">AI‑сотрудниками</span></h1>
+    <p class="lead">Создавайте цифровых сотрудников, ставьте им разовые и регулярные задания, запускайте работу по расписанию и контролируйте результаты — в одном интерфейсе.</p>
+    <div class="cover__chips">
+      <span class="chip"><svg class="i"><use href="#calendar"/></svg>Работа по расписанию</span>
+      <span class="chip"><svg class="i"><use href="#bars"/></svg>Контроль результатов</span>
+      <span class="chip"><svg class="i"><use href="#shield"/></svg>На сервере компании</span>
+    </div>
+  </div>
+  <img class="cover__img" src="%IMG_CONSOLE%" alt="">
+</section>
+
+<!-- ================= 02 STEPS ================= -->
+<section class="slide glow">
+  <div class="top"><div class="logo">%LOGO% Нейропульт</div><div class="pnum"><b>02</b> / 15</div></div>
+  <div class="eyebrow"><svg class="i"><use href="#zap"/></svg>Суть продукта</div>
+  <h2 class="h2">Не просто ответы. <span class="accent">Выполненная работа.</span></h2>
+  <p class="lead">Вы говорите Нейропульту, что нужно сделать, — обычным текстом или голосом. Система сама подбирает агентов, инструменты и интеграции.</p>
+  <div class="steps">
+    <div class="card step">
+      <div class="step__n">1</div>
+      <h3>Поставьте задачу</h3>
+      <p>Опишите, что нужно сделать и какой результат вы ожидаете.</p>
+      <div class="step__ui">
+        <div class="input">Подготовь отчёт по продажам за неделю<span class="mic"><svg class="i"><use href="#mic"/></svg></span></div>
+      </div>
+      <svg class="i step__arrow"><use href="#arrow-right"/></svg>
+    </div>
+    <div class="card step">
+      <div class="step__n">2</div>
+      <h3>AI-сотрудник выполнит</h3>
+      <p>Агент возьмёт задачу в работу и выполнит её сам, используя ваши системы.</p>
+      <div class="step__ui">
+        <div class="row" style="margin-bottom:16px"><span class="ico ico--sm c-green"><svg class="i"><use href="#bars"/></svg></span><div><b style="font-size:21px">Агент-аналитик</b><div style="font-size:17px;color:var(--muted)">CRM · 1С · таблицы</div></div><span class="badge badge--work" style="margin-left:auto">В работе</span></div>
+        <div class="bar"><i style="width:64%"></i></div>
+      </div>
+      <svg class="i step__arrow"><use href="#arrow-right"/></svg>
+    </div>
+    <div class="card step">
+      <div class="step__n">3</div>
+      <h3>Получите результат</h3>
+      <p>Готовый файл, публикация или отчёт появится в системе в нужное время.</p>
+      <div class="step__ui">
+        <div class="row"><span class="file file--xlsx">XLSX</span><div><b style="font-size:21px">Weekly_Report.xlsx</b><div style="font-size:17px;color:var(--muted)">Сегодня, 09:12</div></div><svg class="i check" style="margin-left:auto"><use href="#check-circle"/></svg></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 03 DASHBOARD ================= -->
+<section class="slide slide--soft">
+  <div class="top"><div class="logo">%LOGO% Нейропульт</div><div class="pnum"><b>03</b> / 15</div></div>
+  <div style="display:flex;justify-content:space-between;align-items:flex-end">
+    <div>
+      <div class="eyebrow"><svg class="i"><use href="#grid"/></svg>Единый интерфейс</div>
+      <h2 class="h2">Вся работа — в одном окне</h2>
+    </div>
+    <p class="lead" style="max-width:640px;margin:0 0 6px;font-size:26px">Кто что делает, на каком этапе задание и где лежит результат — видно сразу.</p>
+  </div>
+  <div class="dash">
+    <div class="dash__side">
+      <div class="logo" style="font-size:24px">%LOGO%</div>
+      <div class="dash__nav">
+        <div class="on"><svg class="i"><use href="#home"/></svg>Дашборд</div>
+        <div><svg class="i"><use href="#users"/></svg>AI-сотрудники</div>
+        <div><svg class="i"><use href="#list"/></svg>Задания</div>
+        <div><svg class="i"><use href="#calendar"/></svg>Расписания</div>
+        <div><svg class="i"><use href="#bars"/></svg>Результаты</div>
+        <div><svg class="i"><use href="#history"/></svg>История</div>
+        <div><svg class="i"><use href="#settings"/></svg>Настройки</div>
+      </div>
+    </div>
+    <div class="dash__main">
+      <div class="dash__head"><h4>Дашборд</h4><span class="tag">Рабочее пространство · Маркетинг</span></div>
+      <div class="dash__cols">
+        <div class="col">
+          <div class="col__h">AI-сотрудники <span>+ Добавить</span></div>
+          <div class="it"><span class="ico ico--sm c-violet"><svg class="i"><use href="#code"/></svg></span><div><b>Агент-разработчик</b><small>Код, интеграции, автоматизация</small></div></div>
+          <div class="it"><span class="ico ico--sm c-green"><svg class="i"><use href="#feather"/></svg></span><div><b>Агент-копирайтер</b><small>Тексты, письма, контент-планы</small></div></div>
+          <div class="it"><span class="ico ico--sm c-blue"><svg class="i"><use href="#bars"/></svg></span><div><b>Агент-аналитик</b><small>Отчёты, визуализация</small></div></div>
+        </div>
+        <div class="col">
+          <div class="col__h">Задания <span>+ Новое задание</span></div>
+          <div class="it"><div><b>Обновить API документацию</b><small>Агент-разработчик · 12:30</small></div><span class="badge badge--work">В работе</span></div>
+          <div class="it"><div><b>Рассылка о продукте</b><small>Агент-копирайтер · 10:15</small></div><span class="badge badge--done">Готово</span></div>
+          <div class="it"><div><b>Отчёт по метрикам</b><small>Агент-аналитик · завтра, 09:00</small></div><span class="badge badge--plan">По расписанию</span></div>
+        </div>
+        <div class="col">
+          <div class="col__h">Результаты <span>Смотреть все</span></div>
+          <div class="it"><span class="file file--pdf">PDF</span><div><b>API_Documentation_v2.pdf</b><small>Сегодня, 12:45</small></div><svg class="i check" style="margin-left:auto;width:24px"><use href="#check-circle"/></svg></div>
+          <div class="it"><span class="file file--docx">DOCX</span><div><b>Product_Newsletter.docx</b><small>Сегодня, 10:28</small></div><svg class="i check" style="margin-left:auto;width:24px"><use href="#check-circle"/></svg></div>
+          <div class="it"><span class="file file--xlsx">XLSX</span><div><b>Weekly_Report.xlsx</b><small>Сегодня, 09:12</small></div><svg class="i check" style="margin-left:auto;width:24px"><use href="#check-circle"/></svg></div>
+        </div>
+      </div>
+      <div class="stats">
+        <div class="stat"><svg class="i"><use href="#users"/></svg><div><b>12</b><small>AI-сотрудников</small></div></div>
+        <div class="stat"><svg class="i"><use href="#clipboard"/></svg><div><b>28</b><small>Активных заданий</small></div></div>
+        <div class="stat"><svg class="i" style="color:var(--green)"><use href="#check-circle"/></svg><div><b>156</b><small>Выполнено задач</small></div></div>
+        <div class="stat"><svg class="i"><use href="#clock"/></svg><div><b>98%</b><small>Успешных запусков</small></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 04 STAFF ================= -->
+<section class="slide glow">
+  <div class="top"><div class="logo">%LOGO% Нейропульт</div><div class="pnum"><b>04</b> / 15</div></div>
+  <div class="eyebrow"><svg class="i"><use href="#bot"/></svg>AI-сотрудники</div>
+  <h2 class="h2" style="max-width:1200px">Создайте цифровой штат<br>под задачи компании</h2>
+  <p class="lead" style="max-width:1100px;font-size:26px;margin-top:20px">Каждый AI-сотрудник — это роль, набор навыков и доступов.</p>
+  <div class="staff">
+    <div class="card"><span class="ico c-violet"><svg class="i"><use href="#code"/></svg></span><h3>AI-разработчик</h3><p>Интеграции, скрипты, API</p><div class="tags"><span class="tag">API</span><span class="tag">Код</span></div></div>
+    <div class="card"><span class="ico c-green"><svg class="i"><use href="#feather"/></svg></span><h3>AI-копирайтер</h3><p>Статьи, письма, контент-планы</p><div class="tags"><span class="tag">Тексты</span><span class="tag">Рассылки</span></div></div>
+    <div class="card"><span class="ico c-blue"><svg class="i"><use href="#bars"/></svg></span><h3>AI-аналитик</h3><p>Отчёты, дашборды, выводы</p><div class="tags"><span class="tag">Аналитика</span><span class="tag">Отчёты</span></div></div>
+    <div class="card"><span class="ico c-orange"><svg class="i"><use href="#table"/></svg></span><h3>AI-оператор</h3><p>Сервисы, таблицы, данные</p><div class="tags"><span class="tag">Таблицы</span><span class="tag">Проверка</span></div></div>
+    <div class="card"><span class="ico c-pink"><svg class="i"><use href="#edit"/></svg></span><h3>AI-редактор</h3><p>Проверка и улучшение текстов</p><div class="tags"><span class="tag">Редактура</span><span class="tag">Корректура</span></div></div>
+    <div class="card"><span class="ico c-teal"><svg class="i"><use href="#globe"/></svg></span><h3>AI-менеджер сайта</h3><p>Публикации, структура, медиа</p><div class="tags"><span class="tag">CMS</span><span class="tag">Медиа</span></div></div>
+  </div>
+  <img class="staff__img" src="%IMG_TEAM%" alt="">
+</section>
+
+<!-- ================= 05 SCHEDULE ================= -->
+<section class="slide slide--soft">
+  <div class="top"><div class="logo">%LOGO% Нейропульт</div><div class="pnum"><b>05</b> / 15</div></div>
+  <div class="eyebrow"><svg class="i"><use href="#calendar"/></svg>Задания и расписания</div>
+  <h2 class="h2">Работают тогда, когда это нужно</h2>
+  <p class="lead">Разовые поручения, регулярные отчёты по расписанию и очереди задач, которые выполняются по порядку.</p>
+  <img class="sched__img" src="%IMG_CALENDAR%" alt="">
+  <div class="modes">
+    <div class="card mode">
+      <span class="ico c-violet"><svg class="i"><use href="#zap"/></svg></span>
+      <h3>Разовое задание</h3>
+      <p>Для задач «сделать сейчас». AI-сотрудник выполнит и вернёт результат.</p>
+      <div class="mode__ui">
+        <div class="mini"><svg class="i"><use href="#edit"/></svg>Написать пресс-релиз о запуске</div>
+        <div class="btn-mini">Создать задание</div>
+      </div>
+    </div>
+    <div class="card mode">
+      <span class="ico c-green"><svg class="i"><use href="#repeat"/></svg></span>
+      <h3>По расписанию</h3>
+      <p>Выполняется автоматически — каждый день, неделю или месяц.</p>
+      <div class="mode__ui">
+        <div class="mini"><svg class="i"><use href="#clock"/></svg><div>Отчёт по продажам<small>Каждый понедельник в 09:00</small></div></div>
+        <div class="mini"><svg class="i"><use href="#clock"/></svg><div>Мониторинг упоминаний бренда<small>Ежедневно в 18:00</small></div></div>
+      </div>
+    </div>
+    <div class="card mode">
+      <span class="ico c-orange"><svg class="i"><use href="#list-checks"/></svg></span>
+      <h3>Очередь заданий</h3>
+      <p>Задачи ставятся в очередь и выполняются по порядку.</p>
+      <div class="mode__ui">
+        <div class="mini"><span class="n">1</span>Аналитика рынка</div>
+        <div class="mini"><span class="n">2</span>Текст для лендинга</div>
+        <div class="mini"><span class="n">3</span>Контент-план на месяц</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 06 ROUTINE ================= -->
+<section class="slide glow">
+  <div class="top"><div class="logo">%LOGO% Нейропульт</div><div class="pnum"><b>06</b> / 15</div></div>
+  <div class="eyebrow"><svg class="i"><use href="#layers"/></svg>Что можно поручить</div>
+  <h2 class="h2">Поручите AI рутинную<br>и операционную работу</h2>
+  <div class="routine">
+    <div class="card"><span class="ico c-green"><svg class="i"><use href="#feather"/></svg></span><h3>Контент</h3><p>Статьи, тексты, рассылки, описания, контент-планы</p></div>
+    <div class="card"><span class="ico c-blue"><svg class="i"><use href="#globe"/></svg></span><h3>Сайты</h3><p>Создание, публикация, домены, обновления и медиа</p></div>
+    <div class="card"><span class="ico c-violet"><svg class="i"><use href="#languages"/></svg></span><h3>Локализация</h3><p>Переводы и адаптация контента под рынки</p></div>
+    <div class="card"><span class="ico c-teal"><svg class="i"><use href="#bars"/></svg></span><h3>Аналитика</h3><p>Отчёты, дашборды, выводы и рекомендации</p></div>
+    <div class="card"><span class="ico c-violet"><svg class="i"><use href="#code"/></svg></span><h3>Разработка</h3><p>Код, репозитории, серверы, автоматизация</p></div>
+    <div class="card"><span class="ico c-orange"><svg class="i"><use href="#search"/></svg></span><h3>SEO и GEO</h3><p>Оптимизация, мета-данные, анализ выдачи</p></div>
+    <div class="card"><span class="ico c-pink"><svg class="i"><use href="#file"/></svg></span><h3>Документы</h3><p>Шаблоны, отчёты, проверки, обработка файлов</p></div>
+    <div class="card"><span class="ico c-red"><svg class="i"><use href="#workflow"/></svg></span><h3>Операционка</h3><p>CRM, таблицы, проверки, работа с сервисами</p></div>
+  </div>
+</section>
+
+<!-- ================= 07 BACKGROUND (dark) ================= -->
+<section class="slide dark">
+  <div class="top"><div class="logo">%LOGO_W% Нейропульт</div><div class="pnum"><b>07</b> / 15</div></div>
+  <div class="eyebrow"><svg class="i"><use href="#server"/></svg>Работа на сервере</div>
+  <h2 class="h2" style="max-width:900px">Работает в фоне. Даже когда компьютер выключен.</h2>
+  <div class="bg-feats">
+    <div class="bg-feat"><span class="ico"><svg class="i"><use href="#clock"/></svg></span><div><h3>Длинные задачи не прерываются</h3><p>Работа продолжается до завершения</p></div></div>
+    <div class="bg-feat"><span class="ico"><svg class="i"><use href="#calendar"/></svg></span><div><h3>Запуск по расписанию</h3><p>AI-сотрудники стартуют автоматически</p></div></div>
+    <div class="bg-feat"><span class="ico"><svg class="i"><use href="#phone"/></svg></span><div><h3>Доступ из браузера</h3><p>Управляйте с любого устройства</p></div></div>
+  </div>
+  <div class="night">
+    <img src="img/laptop.webp" alt="">
+    <div class="status">
+      <h4>Нейропульт — статус</h4>
+      <div class="r"><svg class="i"><use href="#activity"/></svg>Активные задания<b>28</b></div>
+      <div class="r"><svg class="i"><use href="#play"/></svg>Выполняются сейчас<b>8</b></div>
+      <div class="r"><svg class="i"><use href="#calendar"/></svg>По расписанию<b>15</b></div>
+      <div class="r"><span class="dot" style="margin:0 5px"></span>Система работает<b style="color:var(--green)">Онлайн</b></div>
+    </div>
+    <div class="jobs">
+      <div class="job"><b>Отчёт по продажам</b><small>~32 мин</small><div class="bar"><i style="width:58%"></i></div></div>
+      <div class="job"><b>Мониторинг бренда</b><small>~12 мин</small><div class="bar"><i style="width:82%"></i></div></div>
+      <div class="job"><b>Обновление базы</b><small>~45 мин</small><div class="bar"><i style="width:34%"></i></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 08 INTEGRATIONS ================= -->
+<section class="slide slide--soft glow">
+  <div class="top"><div class="logo">%LOGO% Нейропульт</div><div class="pnum"><b>08</b> / 15</div></div>
+  <div style="text-align:center">
+    <div class="eyebrow"><svg class="i"><use href="#plug"/></svg>AI-слой поверх вашей инфраструктуры</div>
+    <h2 class="h2">Подключается к системам,<br>которые у вас уже есть</h2>
+    <p class="lead" style="margin:22px auto 0;font-size:26px;max-width:1000px">Нейропульт не заменяет CRM, 1С и CMS — он работает поверх них и использует их как инструменты.</p>
+  </div>
+  <div class="integr">
+    <div class="integr__col">
+      <div class="chip"><span class="ico ico--sm c-violet"><svg class="i"><use href="#users"/></svg></span><div><b>Bitrix24 и amoCRM</b><small>Сделки, контакты, задачи</small></div></div>
+      <div class="chip"><span class="ico ico--sm c-orange"><svg class="i"><use href="#database"/></svg></span><div><b>1С</b><small>Документы и учётные данные</small></div></div>
+      <div class="chip"><span class="ico ico--sm c-blue"><svg class="i"><use href="#globe"/></svg></span><div><b>Сайты и приложения</b><small>CMS, публикации, домены</small></div></div>
+      <div class="chip"><span class="ico ico--sm c-green"><svg class="i"><use href="#folder"/></svg></span><div><b>Файлы и базы знаний</b><small>Документы компании</small></div></div>
+    </div>
+    <img src="img/core.webp" alt="">
+    <div class="integr__col integr__col--r">
+      <div class="chip"><span class="ico ico--sm c-blue"><svg class="i"><use href="#send"/></svg></span><div><b>Telegram, MAX, WhatsApp</b><small>Каналы общения с клиентами</small></div></div>
+      <div class="chip"><span class="ico ico--sm c-pink"><svg class="i"><use href="#git"/></svg></span><div><b>Репозитории и серверы</b><small>Git, деплой, мониторинг</small></div></div>
+      <div class="chip"><span class="ico ico--sm c-teal"><svg class="i"><use href="#plug"/></svg></span><div><b>API и MCP</b><small>Любые внешние инструменты</small></div></div>
+      <div class="chip"><span class="ico ico--sm c-violet"><svg class="i"><use href="#sparkles"/></svg></span><div><b>AI-провайдеры</b><small>И локальные модели on-prem</small></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 09 PERSONAS ================= -->
+<section class="slide glow">
+  <div class="top"><div class="logo">%LOGO% Нейропульт</div><div class="pnum"><b>09</b> / 15</div></div>
+  <div class="eyebrow"><svg class="i"><use href="#target"/></svg>Для кого</div>
+  <h2 class="h2">Ваш AI‑партнёр в развитии бизнеса</h2>
+  <p class="lead" style="font-size:26px;margin-top:20px">Достаточно одной фразы — вот как это звучит в разных командах.</p>
+  <div class="personas">
+    <div class="persona"><img src="img/persona-owner.webp" alt=""><div class="persona__b"><span class="persona__who">Собственникам</span><h3>AI-контур вместо пяти подрядчиков</h3><div class="say">Собери сводку по выручке и дебиторке за месяц</div></div></div>
+    <div class="persona"><img src="img/persona-marketing.webp" alt=""><div class="persona__b"><span class="persona__who">Маркетингу</span><h3>Контент-завод, который работает по расписанию</h3><div class="say">Сделай контент-план на ноябрь для Telegram и VK</div></div></div>
+    <div class="persona"><img src="img/persona-sales.webp" alt=""><div class="persona__b"><span class="persona__who">Продажам</span><h3>CRM, которая ведёт себя сама</h3><div class="say">Найди сделки без активности больше 7 дней</div></div></div>
+    <div class="persona"><img src="img/persona-dev.webp" alt=""><div class="persona__b"><span class="persona__who">ИТ и разработке</span><h3>Рутина в коде и на серверах — агентам</h3><div class="say">Проверь логи и найди причину 502 за ночь</div></div></div>
+    <div class="persona"><img src="img/persona-enterprise.webp" alt=""><div class="persona__b"><span class="persona__who">Крупному бизнесу</span><h3>Собственный AI-контур в периметре</h3><div class="say">Данные не покидают инфраструктуру компании</div></div></div>
+  </div>
+</section>
+
+<!-- ================= 10 DEPLOY ================= -->
+<section class="slide slide--soft">
+  <div class="top"><div class="logo">%LOGO% Нейропульт</div><div class="pnum"><b>10</b> / 15</div></div>
+  <div class="eyebrow"><svg class="i"><use href="#cloud"/></svg>Варианты размещения</div>
+  <h2 class="h2">В выделенном облаке<br>или на сервере компании</h2>
+  <div class="deploy">
+    <div class="card dep">
+      <img src="img/cloud.webp" alt="">
+      <div>
+        <span class="lbl">Облачные тарифы</span>
+        <h3>Выделенное облако</h3>
+        <p>Разворачиваем на поддомене <b>company.neuropult.ru</b> с полной изоляцией.</p>
+        <ul>
+          <li><svg class="i"><use href="#check-circle"/></svg>AI-ресурс уже включён в тариф</li>
+          <li><svg class="i"><use href="#check-circle"/></svg>Сопровождение на нашей стороне</li>
+          <li><svg class="i"><use href="#check-circle"/></svg>Запуск без своей IT-команды</li>
+        </ul>
+      </div>
+    </div>
+    <div class="card dep">
+      <img src="img/server.webp" alt="">
+      <div>
+        <span class="lbl">Enterprise · On-Prem</span>
+        <h3>На сервере заказчика</h3>
+        <p>Устанавливаем систему в вашей инфраструктуре — данные остаются внутри компании.</p>
+        <ul>
+          <li><svg class="i"><use href="#check-circle"/></svg>Свои AI-провайдеры и ключи</li>
+          <li><svg class="i"><use href="#check-circle"/></svg>Локальные модели</li>
+          <li><svg class="i"><use href="#check-circle"/></svg>Без лимита пользователей и агентов</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="note"><svg class="i"><use href="#layers"/></svg>В обоих вариантах — отдельный рабочий контур Нейропульта со своими пользователями, данными и настройками.</div>
+</section>
+
+<!-- ================= 11 CONTROL ================= -->
+<section class="slide glow">
+  <div class="top"><div class="logo">%LOGO% Нейропульт</div><div class="pnum"><b>11</b> / 15</div></div>
+  <div class="eyebrow"><svg class="i"><use href="#shield-check"/></svg>Контроль и безопасность</div>
+  <h2 class="h2">AI работает. Компания контролирует.</h2>
+  <div class="ctrl">
+    <img src="img/shield.webp" alt="">
+    <div>
+      <div class="ctrl__grid">
+        <div class="card"><span class="ico ico--sm c-violet"><svg class="i"><use href="#key"/></svg></span><div><h3>Управление доступом</h3><p>Гибкие роли и права для команд</p></div></div>
+        <div class="card"><span class="ico ico--sm c-blue"><svg class="i"><use href="#history"/></svg></span><div><h3>История действий</h3><p>Полный журнал всего, что делал AI</p></div></div>
+        <div class="card"><span class="ico ico--sm c-teal"><svg class="i"><use href="#eye"/></svg></span><div><h3>Просмотр изменений</h3><p>Кто и что изменил в результатах</p></div></div>
+        <div class="card"><span class="ico ico--sm c-red"><svg class="i"><use href="#stop"/></svg></span><div><h3>Остановка задания</h3><p>Приостановка в один клик</p></div></div>
+        <div class="card"><span class="ico ico--sm c-orange"><svg class="i"><use href="#layers"/></svg></span><div><h3>Рабочие пространства</h3><p>Проекты и команды — раздельно</p></div></div>
+        <div class="card"><span class="ico ico--sm c-green"><svg class="i"><use href="#user-check"/></svg></span><div><h3>Подтверждение</h3><p>Критичные шаги — только с согласия человека</p></div></div>
+      </div>
+      <div class="quote">Не бесконтрольная автономность, а управляемая цифровая работа</div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 12 PRICING ================= -->
+<section class="slide slide--soft">
+  <div class="top"><div class="logo">%LOGO% Нейропульт</div><div class="pnum"><b>12</b> / 15</div></div>
+  <div style="display:flex;justify-content:space-between;align-items:flex-end">
+    <div>
+      <div class="eyebrow"><svg class="i"><use href="#cloud"/></svg>Облачные тарифы</div>
+      <h2 class="h2">Без искусственных ограничений</h2>
+    </div>
+    <p class="lead" style="max-width:600px;margin:0 0 6px;font-size:24px">Полный функционал на любом тарифе — различается только объём AI-ресурса. <b>За год — 2&nbsp;месяца бесплатно.</b></p>
+  </div>
+  <div class="prices">
+    <div class="card price">
+      <h3>Старт</h3><div class="for">Для собственника и небольшой команды</div>
+      <div class="sum">20 000 ₽ <small>/ мес</small></div>
+      <div class="year">или 200 000 ₽ за год · <b>2 месяца в подарок</b></div>
+      <div class="res"><div class="res__lbl">AI-ресурс <span>Базовый</span></div><div class="cells"><i class="on"></i><i class="on"></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></div>
+    </div>
+    <div class="card price price--hot">
+      <span class="price__flag">Для команд</span>
+      <h3>Стандарт</h3><div class="for">Для команд и отделов компании</div>
+      <div class="sum">100 000 ₽ <small>/ мес</small></div>
+      <div class="year">или 1 000 000 ₽ за год · <b>2 месяца в подарок</b></div>
+      <div class="res"><div class="res__lbl">AI-ресурс <span>Увеличенный</span></div><div class="cells"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i><i></i><i></i></div></div>
+    </div>
+    <div class="card price">
+      <h3>Максимум</h3><div class="for">Для всей компании и больших объёмов</div>
+      <div class="sum">200 000 ₽ <small>/ мес</small></div>
+      <div class="year">или 2 000 000 ₽ за год · <b>2 месяца в подарок</b></div>
+      <div class="res"><div class="res__lbl">AI-ресурс <span>Максимальный</span></div><div class="cells"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></div></div>
+    </div>
+  </div>
+  <div class="battery">
+    <img src="%IMG_BATTERY%" alt="">
+    <div><h4>AI-ресурс — как заряд батареи</h4><p>Не нужно разбираться в токенах, моделях и лимитах провайдеров.</p></div>
+    <div class="row"><span class="big-n">0</span><p style="margin:0">токенов<br>в интерфейсе</p></div>
+    <div class="row"><span class="big-n">1</span><p style="margin:0">понятный индикатор<br>«Использование AI»</p></div>
+  </div>
+</section>
+
+<!-- ================= 13 ENTERPRISE ================= -->
+<section class="slide glow">
+  <div class="top"><div class="logo">%LOGO% Нейропульт</div><div class="pnum"><b>13</b> / 15</div></div>
+  <div class="eyebrow"><svg class="i"><use href="#building"/></svg>Enterprise-решения · On-Prem</div>
+  <h2 class="h2">Нейропульт на серверах<br>вашей компании</h2>
+  <img class="ent__img" src="img/enterprise.webp" alt="">
+  <div class="ent-why">
+    <div><span class="ico ico--sm c-violet"><svg class="i"><use href="#lock"/></svg></span><span>Данные в периметре<small>Файлы и история — у вас</small></span></div>
+    <div><span class="ico ico--sm c-blue"><svg class="i"><use href="#sparkles"/></svg></span><span>Свои AI-провайдеры<small>Ключи или локальные LLM</small></span></div>
+    <div><span class="ico ico--sm c-green"><svg class="i"><use href="#zap"/></svg></span><span>Без AI-лимитов<small>Только ваша инфраструктура</small></span></div>
+    <div><span class="ico ico--sm c-orange"><svg class="i"><use href="#users"/></svg></span><span>Вся компания<small>Пользователи и агенты без лимита</small></span></div>
+  </div>
+  <div class="ent">
+    <div class="card"><div class="tier"><h3 style="font-size:32px">Корпоративный</h3></div><div class="for">Для среднего бизнеса со своей IT-инфраструктурой</div><div class="sum">1 950 000 ₽ <small>/ год</small></div>
+      <ul><li><svg class="i"><use href="#check"/></svg>Один production-контур</li><li><svg class="i"><use href="#check"/></svg>Свои AI-провайдеры и локальные модели</li><li><svg class="i"><use href="#check"/></svg>Обновления и стандартная поддержка</li></ul></div>
+    <div class="card" style="border:2px solid var(--brand-500)"><div class="tier"><h3 style="font-size:32px">Расширенный</h3></div><div class="for">Для крупных компаний с повышенными требованиями</div><div class="sum">4 950 000 ₽ <small>/ год</small></div>
+      <ul><li><svg class="i"><use href="#check"/></svg>SSO / LDAP, расширенный аудит</li><li><svg class="i"><use href="#check"/></svg>High availability, PROD / TEST</li><li><svg class="i"><use href="#check"/></svg>Повышенный SLA</li></ul></div>
+    <div class="card"><div class="tier"><h3 style="font-size:32px">Индивидуальный</h3></div><div class="for">Для холдингов со сложной инфраструктурой</div><div class="sum">от 9 950 000 ₽ <small>/ год</small></div>
+      <ul><li><svg class="i"><use href="#check"/></svg>Несколько независимых контуров</li><li><svg class="i"><use href="#check"/></svg>Индивидуальные интеграции</li><li><svg class="i"><use href="#check"/></svg>Персональное сопровождение</li></ul></div>
+  </div>
+  <div class="note"><svg class="i"><use href="#server"/></svg><span><b>Лицензия — на рабочий контур, а не на серверы.</b> Добавляйте серверы и worker-ноды без пересчёта лицензии.</span></div>
+</section>
+
+<!-- ================= 14 PILOT ================= -->
+<section class="slide slide--soft glow">
+  <div class="top"><div class="logo">%LOGO% Нейропульт</div><div class="pnum"><b>14</b> / 15</div></div>
+  <div class="eyebrow"><svg class="i"><use href="#target"/></svg>Как начать</div>
+  <h2 class="h2">Начните с одного<br>понятного процесса</h2>
+  <p class="lead" style="font-size:28px;max-width:1000px">Пилот на одной задаче покажет результат за пару недель — дальше масштабируйте на команду.</p>
+  <img class="pilot__img" src="%IMG_ROCKET%" alt="">
+  <div class="path">
+    <div class="pstep"><div class="n">1</div><h3>Выберите процесс</h3></div>
+    <div class="pstep"><div class="n">2</div><h3>Опишите задачу</h3></div>
+    <div class="pstep"><div class="n">3</div><h3>Подключите AI‑сотрудника</h3></div>
+    <div class="pstep"><div class="n">4</div><h3>Запустите пилот</h3></div>
+    <div class="pstep"><div class="n">5</div><h3>Проверьте результат</h3></div>
+    <div class="pstep"><div class="n">6</div><h3>Отладьте процесс</h3></div>
+    <div class="pstep"><div class="n"><svg class="i" style="width:40px;height:40px"><use href="#trending"/></svg></div><h3>Масштабируйте на команду</h3></div>
+  </div>
+  <div class="pilot-cta">
+    <span class="ico c-violet"><svg class="i"><use href="#message"/></svg></span>
+    <div><h3>Разберём ваши процессы и предложим, с какого начать</h3><p>Расскажите о команде и задачах — подберём вариант и запустим пилот.</p></div>
+    <span class="btn btn--primary">Обсудить пилот<svg class="i"><use href="#arrow-right"/></svg></span>
+  </div>
+</section>
+
+<!-- ================= 15 CTA ================= -->
+<section class="slide cta">
+  <div class="top"><div class="logo">%LOGO_W% Нейропульт</div><div class="pnum"><b>15</b> / 15</div></div>
+  <div class="cta__in">
+    <h2>Создайте цифровой штат. Управляйте им через Нейропульт.</h2>
+    <p class="lead">Поручите AI-сотрудникам рутину, контролируйте результат и сосредоточьтесь на развитии бизнеса.</p>
+    <div class="btns"><span class="btn btn--primary">Обсудить пилот<svg class="i"><use href="#arrow-right"/></svg></span><span class="btn btn--ghost">Запросить демонстрацию</span></div>
+  </div>
+  <img class="cta__img" src="img/agents.webp" alt="">
+  <div class="contacts">
+    <div><span class="ico"><svg class="i"><use href="#mail"/></svg></span><span><small>Email</small><b>hello@neuropult.ru</b></span></div>
+    <div><span class="ico"><svg class="i"><use href="#globe"/></svg></span><span><small>Сайт</small><b>neuropult.ru</b></span></div>
+  </div>
+</section>
+</body>
+</html>

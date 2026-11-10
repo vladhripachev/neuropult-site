@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Безопасность и размещение — Нейропульт</title>
+  <meta name="description" content="Изолированные облачные контуры и On-Prem установка в инфраструктуре клиента: права, аудит, подтверждение действий, SSO, LDAP и локальные LLM.">
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css?v=1792591641">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container site-header__inner">
+    <a href="index.html" class="logo" aria-label="Нейропульт — на главную"><img src="assets/images/logo.svg" alt="" width="28" height="28">Нейропульт</a>
+    <nav class="nav" aria-label="Основная навигация">
+      <a class="nav__link" href="features.html">Возможности</a>
+      <a class="nav__link" href="how-it-works.html">Как работает</a>
+      <a class="nav__link" href="agents.html">AI-сотрудники</a>
+      <a class="nav__link" href="solutions.html">Для кого</a>
+      <a class="nav__link" href="pricing.html">Тарифы</a>
+      <a class="nav__link" href="enterprise.html">Enterprise</a>
+    </nav>
+    <div class="header-actions">
+      <a class="login" href="login.html">Войти</a>
+      <a class="btn btn--primary btn--sm" href="demo.html">Запросить демо</a>
+      <button class="burger" type="button" aria-label="Меню" aria-expanded="false" aria-controls="mobile-menu"><svg class="i i--lg"><use href="assets/images/icons.svg#menu"/></svg></button>
+    </div>
+  </div>
+</header>
+<div class="mobile-menu" id="mobile-menu">
+  <a href="features.html">Возможности</a>
+  <a href="how-it-works.html">Как работает</a>
+  <a href="agents.html">AI-сотрудники</a>
+  <a href="solutions.html">Для кого</a>
+  <a href="pricing.html">Тарифы</a>
+  <a href="enterprise.html">Enterprise</a>
+  <a href="login.html">Войти</a>
+  <a class="btn btn--primary btn--lg" href="demo.html">Запросить демо</a>
+</div>
+
+<main>
+
+  <section class="page-hero">
+    <div class="container page-hero__grid">
+      <div>
+        <nav class="breadcrumbs reveal" aria-label="Хлебные крошки"><a href="index.html">Главная</a><span>/</span><span>Безопасность</span></nav>
+        <h1 class="page-hero__title reveal">AI работает. Компания контролирует.</h1>
+        <p class="lead reveal reveal-d1">Не бесконтрольная автономность, а управляемая цифровая работа: изолированный контур, права доступа, история всех действий и подтверждение критичных шагов человеком.</p>
+        <div class="hero__actions reveal reveal-d2">
+          <a class="btn btn--primary btn--lg" href="demo.html">Обсудить требования</a>
+          <a class="btn btn--ghost btn--lg" href="#deploy">Варианты размещения</a>
+        </div>
+      </div>
+      <div class="page-hero__visual reveal reveal-d2"><img class="float" src="assets/images/shield.webp" alt="Защита данных в Нейропульте" width="900" height="777"></div>
+    </div>
+  </section>
+
+  <!-- Принципы -->
+  <section class="section section--tight">
+    <div class="container">
+      <div class="section-head reveal">
+        <h2 class="h2">Принципы контроля</h2>
+        <p class="lead">Каждое действие AI-сотрудника прозрачно и обратимо — на любом тарифе.</p>
+      </div>
+      <div class="grid grid--3">
+        <div class="card card--hover reveal"><span class="ico c-violet"><svg class="i"><use href="assets/images/icons.svg#layers"/></svg></span><h3>Изолированный контур</h3><p>Каждый клиент получает отдельный рабочий контур со своими пользователями, данными и настройками.</p></div>
+        <div class="card card--hover reveal reveal-d1"><span class="ico c-violet"><svg class="i"><use href="assets/images/icons.svg#users"/></svg></span><h3>Роли и права</h3><p>AI-сотрудники и люди видят только разрешённые системы, пространства и данные.</p></div>
+        <div class="card card--hover reveal reveal-d2"><span class="ico c-violet"><svg class="i"><use href="assets/images/icons.svg#history"/></svg></span><h3>Полный аудит</h3><p>История всех действий: кто поставил задачу, что сделал агент, что изменилось.</p></div>
+        <div class="card card--hover reveal"><span class="ico c-violet"><svg class="i"><use href="assets/images/icons.svg#shield-check"/></svg></span><h3>Подтверждение действий</h3><p>Публикация, отправка писем, изменения в CRM — только после согласования, если вы так решили.</p></div>
+        <div class="card card--hover reveal reveal-d1"><span class="ico c-violet"><svg class="i"><use href="assets/images/icons.svg#stop"/></svg></span><h3>Остановка в один клик</h3><p>Любое задание или расписание можно приостановить мгновенно.</p></div>
+        <div class="card card--hover reveal reveal-d2"><span class="ico c-violet"><svg class="i"><use href="assets/images/icons.svg#key"/></svg></span><h3>Управление доступами</h3><p>Доступы к системам выдаются агентам точечно и отзываются в любой момент.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Размещение -->
+  <section class="section section--soft" id="deploy">
+    <div class="container">
+      <div class="section-head reveal">
+        <h2 class="h2">Выделенное облако или ваш сервер</h2>
+        <p class="lead">В обоих вариантах — полный функционал Нейропульта. Отличаются размещение, AI-провайдеры и зона ответственности.</p>
+      </div>
+      <div class="grid grid--2">
+        <div class="card reveal" style="padding:36px">
+          <div class="card--row" style="align-items:center;margin-bottom:20px"><img src="assets/images/cloud.webp" alt="" width="900" height="663" style="width:110px" loading="lazy"><div><h3 style="font-size:24px;margin:0">Managed Cloud</h3><p>Старт, Стандарт, Максимум</p></div></div>
+          <p>Отдельный контур на поддомене <b style="color:var(--ink)">{client}.neuropult.ru</b> — например, <b style="color:var(--ink)">pioneer.neuropult.ru</b>. Инфраструктуру, обновления и AI-провайдеров берём на себя.</p>
+          <ul class="check-list">
+            <li><svg class="i"><use href="assets/images/icons.svg#check"/></svg>Изоляция данных каждого клиента</li>
+            <li><svg class="i"><use href="assets/images/icons.svg#check"/></svg>AI-провайдеры предоставляет Нейропульт</li>
+            <li><svg class="i"><use href="assets/images/icons.svg#check"/></svg>Фиксированный AI-ресурс без токенов и лимитов моделей</li>
+            <li><svg class="i"><use href="assets/images/icons.svg#check"/></svg>Сопровождение и помощь с настройкой</li>
+          </ul>
+        </div>
+        <div class="card reveal reveal-d1" style="padding:36px;border-color:var(--brand-200)">
+          <div class="card--row" style="align-items:center;margin-bottom:20px"><img src="assets/images/server.webp" alt="" width="484" height="900" style="width:110px;height:110px;object-fit:contain" loading="lazy"><div><h3 style="font-size:24px;margin:0">On-Prem</h3><p>Корпоративный, Расширенный, Индивидуальный</p></div></div>
+          <p>Установка в инфраструктуре клиента. Данные и модели остаются внутри периметра, AI-лимитов со стороны Нейропульта нет.</p>
+          <ul class="check-list">
+            <li><svg class="i"><use href="assets/images/icons.svg#check"/></svg>Собственные AI-провайдеры и API-ключи</li>
+            <li><svg class="i"><use href="assets/images/icons.svg#check"/></svg>Локальные LLM без выхода в интернет</li>
+            <li><svg class="i"><use href="assets/images/icons.svg#check"/></svg>Лицензия на рабочий контур, а не на серверы</li>
+            <li><svg class="i"><use href="assets/images/icons.svg#check"/></svg>Обновления и помощь с развёртыванием</li>
+          </ul>
+          <a class="link-arrow" style="margin-top:20px" href="enterprise.html">Enterprise-решения <svg class="i"><use href="assets/images/icons.svg#arrow-right"/></svg></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Enterprise -->
+  <section class="section">
+    <div class="container split split--even">
+      <div class="persona__media reveal"><img src="assets/images/persona-enterprise.webp" alt="ИТ-директор в серверной" width="1400" height="933" loading="lazy"></div>
+      <div class="reveal reveal-d1">
+        <span class="eyebrow"><svg class="i"><use href="assets/images/icons.svg#building"/></svg>Тариф «Расширенный»</span>
+        <h2 class="h2">Для крупных и критичных установок</h2>
+        <p class="lead muted" style="margin-top:16px">SSO, расширенный аудит, высокая доступность и повышенный SLA. Для холдингов — тариф «Индивидуальный» с несколькими контурами. <a class="text-brand" href="enterprise.html">Подробнее</a></p>
+        <div class="grid grid--2" style="gap:10px;margin-top:24px">
+          <ul class="feature-list" style="margin:0">
+            <li><svg class="i" style="color:var(--brand-500)"><use href="assets/images/icons.svg#refresh"/></svg><b>High availability</b></li>
+            <li><svg class="i" style="color:var(--brand-500)"><use href="assets/images/icons.svg#server"/></svg><b>Кластеризация</b></li>
+            <li><svg class="i" style="color:var(--brand-500)"><use href="assets/images/icons.svg#layers"/></svg><b>PROD / TEST</b></li>
+            <li><svg class="i" style="color:var(--brand-500)"><use href="assets/images/icons.svg#key"/></svg><b>SSO, LDAP, AD</b></li>
+          </ul>
+          <ul class="feature-list" style="margin:0">
+            <li><svg class="i" style="color:var(--brand-500)"><use href="assets/images/icons.svg#users"/></svg><b>Расширенный RBAC</b></li>
+            <li><svg class="i" style="color:var(--brand-500)"><use href="assets/images/icons.svg#eye"/></svg><b>Аудит и логирование</b></li>
+            <li><svg class="i" style="color:var(--brand-500)"><use href="assets/images/icons.svg#database"/></svg><b>Резервирование</b></li>
+            <li><svg class="i" style="color:var(--brand-500)"><use href="assets/images/icons.svg#headphones"/></svg><b>Повышенный SLA</b></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section section--soft">
+    <div class="container">
+      <div class="section-head reveal"><h2 class="h2">Частые вопросы о безопасности</h2></div>
+      <div class="faq reveal">
+        <details>
+          <summary>Можно ли использовать Нейропульт без доступа к внешним AI?<svg class="i"><use href="assets/images/icons.svg#chevron-down"/></svg></summary>
+          <div class="faq__body"><p>Да, в редакциях On-Prem можно подключить локальные LLM и работать полностью внутри периметра компании.</p></div>
+        </details>
+        <details>
+          <summary>Можно ли подключить свои API-ключи в облаке?<svg class="i"><use href="assets/images/icons.svg#chevron-down"/></svg></summary>
+          <div class="faq__body"><p>В облачной версии AI-провайдерами управляет Нейропульт, свои ключи не подключаются. Собственные провайдеры и ключи доступны в On-Prem.</p></div>
+        </details>
+        <details>
+          <summary>Как лицензируется On-Prem?<svg class="i"><use href="assets/images/icons.svg#chevron-down"/></svg></summary>
+          <div class="faq__body"><p>По независимым рабочим контурам, а не по физическим серверам. Один контур может включать несколько серверов, worker-ноды, отдельную БД, S3 и резервные узлы. Несколько независимых контуров — тариф «Индивидуальный».</p></div>
+        </details>
+        <details>
+          <summary>Может ли AI-сотрудник сделать что-то без моего ведома?<svg class="i"><use href="assets/images/icons.svg#chevron-down"/></svg></summary>
+          <div class="faq__body"><p>Агент действует только в рамках выданных прав. Критичные действия можно отметить как требующие подтверждения, а все действия фиксируются в истории.</p></div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--tight">
+    <div class="container">
+      <div class="cta cta--dark reveal">
+        <div>
+          <h2>Есть требования службы безопасности?</h2>
+          <p>Обсудим архитектуру, размещение и интеграцию с вашей инфраструктурой.</p>
+        </div>
+        <div class="hero__actions" style="margin-top:0"><a class="btn btn--white btn--lg" href="demo.html">Связаться с нами</a></div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="logo"><img src="assets/images/logo.svg" alt="" width="28" height="28">Нейропульт</a>
+        <p>AI-контур для бизнеса. Пульт управления AI-сотрудниками компании.</p>
+      </div>
+      <div class="footer-col"><h4>Продукт</h4><ul><li><a href="features.html">Возможности</a></li><li><a href="how-it-works.html">Как работает</a></li><li><a href="agents.html">AI-сотрудники</a></li><li><a href="pricing.html">Тарифы</a></li></ul></div>
+      <div class="footer-col"><h4>Решения</h4><ul><li><a href="solutions.html">Для кого</a></li><li><a href="security.html">Безопасность</a></li><li><a href="enterprise.html">Enterprise-решения</a></li><li><a href="enterprise.html#plans">Тарифы On-Prem</a></li></ul></div>
+      <div class="footer-col"><h4>Компания</h4><ul><li><a href="demo.html">Запросить демо</a></li><li><a href="demo.html#contacts">Контакты</a></li><li><a href="login.html">Вход для клиентов</a></li></ul></div>
+      <div class="footer-col"><h4>Связаться</h4><ul><li><a href="mailto:hello@neuropult.ru">hello@neuropult.ru</a></li><li><a href="https://neuropult.ru">neuropult.ru</a></li></ul></div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span data-current-year>2026</span> Нейропульт. Все права защищены.</span>
+      <span><a href="#">Политика конфиденциальности</a> · <a href="#">Условия использования</a></span>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/main.js?v=1792591641" defer></script>
+</body>
+</html>

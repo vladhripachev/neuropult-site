@@ -1,0 +1,558 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Нейропульт — пульт управления AI-сотрудниками для бизнеса</title>
+  <meta name="description" content="Нейропульт — корпоративный AI-контур: создавайте AI-сотрудников, ставьте им разовые и регулярные задания и контролируйте результаты в одном интерфейсе.">
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css?v=1792591641">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container site-header__inner">
+    <a href="index.html" class="logo" aria-label="Нейропульт — на главную"><img src="assets/images/logo.svg" alt="" width="28" height="28">Нейропульт</a>
+    <nav class="nav" aria-label="Основная навигация">
+      <a class="nav__link" href="features.html">Возможности</a>
+      <a class="nav__link" href="how-it-works.html">Как работает</a>
+      <a class="nav__link" href="agents.html">AI-сотрудники</a>
+      <a class="nav__link" href="solutions.html">Для кого</a>
+      <a class="nav__link" href="pricing.html">Тарифы</a>
+      <a class="nav__link" href="enterprise.html">Enterprise</a>
+    </nav>
+    <div class="header-actions">
+      <a class="login" href="login.html">Войти</a>
+      <a class="btn btn--primary btn--sm" href="demo.html">Запросить демо</a>
+      <button class="burger" type="button" aria-label="Меню" aria-expanded="false" aria-controls="mobile-menu"><svg class="i i--lg"><use href="assets/images/icons.svg#menu"/></svg></button>
+    </div>
+  </div>
+</header>
+<div class="mobile-menu" id="mobile-menu">
+  <a href="features.html">Возможности</a>
+  <a href="how-it-works.html">Как работает</a>
+  <a href="agents.html">AI-сотрудники</a>
+  <a href="solutions.html">Для кого</a>
+  <a href="pricing.html">Тарифы</a>
+  <a href="enterprise.html">Enterprise</a>
+  <a href="login.html">Войти</a>
+  <a class="btn btn--primary btn--lg" href="demo.html">Запросить демо</a>
+</div>
+
+<main>
+
+  <!-- ===== Hero ===== -->
+  <section class="hero">
+    <div class="hero__bg" style="background-image:url('assets/images/hero-bg.webp')"></div>
+    <div class="container hero__grid">
+      <div>
+        <h1 class="h1 hero__title reveal">Пульт управления AI&#8209;сотрудниками</h1>
+        <p class="lead hero__lead reveal reveal-d1">Создавайте цифровых сотрудников, ставьте им разовые и регулярные задания, запускайте работу по расписанию и контролируйте результаты в одном интерфейсе.</p>
+        <div class="hero__actions reveal reveal-d2">
+          <a class="btn btn--primary btn--lg" href="demo.html">Обсудить пилот</a>
+          <a class="btn btn--ghost btn--lg" href="how-it-works.html">Посмотреть демо</a>
+        </div>
+        <ul class="hero__chips reveal reveal-d3">
+          <li class="chip"><svg class="i"><use href="assets/images/icons.svg#calendar"/></svg>Работа по<br>расписанию</li>
+          <li class="chip"><svg class="i"><use href="assets/images/icons.svg#chart"/></svg>Контроль<br>результатов</li>
+          <li class="chip"><svg class="i"><use href="assets/images/icons.svg#shield"/></svg>На сервере<br>компании</li>
+          <li class="chip"><svg class="i"><use href="assets/images/icons.svg#grid"/></svg>Единый<br>интерфейс</li>
+        </ul>
+      </div>
+
+      <div class="mock-frame reveal reveal-d2" data-mock-width="940">
+      <div class="mock" aria-label="Интерфейс Нейропульта: дашборд" role="img">
+        <aside class="mock__side">
+          <img class="mock__logo" src="assets/images/logo.svg" alt="">
+          <span class="mock__nav-item is-active"><svg class="i"><use href="assets/images/icons.svg#home"/></svg>Дашборд</span>
+          <span class="mock__nav-item"><svg class="i"><use href="assets/images/icons.svg#users"/></svg>AI-сотрудники</span>
+          <span class="mock__nav-item"><svg class="i"><use href="assets/images/icons.svg#list"/></svg>Задания</span>
+          <span class="mock__nav-item"><svg class="i"><use href="assets/images/icons.svg#calendar"/></svg>Расписания</span>
+          <span class="mock__nav-item"><svg class="i"><use href="assets/images/icons.svg#chart"/></svg>Результаты</span>
+          <span class="mock__nav-item"><svg class="i"><use href="assets/images/icons.svg#history"/></svg>История</span>
+          <span class="mock__nav-item"><svg class="i"><use href="assets/images/icons.svg#settings"/></svg>Настройки</span>
+          <div class="mock__workspace"><svg class="i"><use href="assets/images/icons.svg#building"/></svg><div><small>Рабочее пространство</small>Маркетинг</div><svg class="i" style="margin-left:auto"><use href="assets/images/icons.svg#chevron-down"/></svg></div>
+        </aside>
+        <div class="mock__main">
+          <div class="mock__top">
+            <span class="mock__title">Дашборд</span>
+            <span class="mock__top-actions"><svg class="i"><use href="assets/images/icons.svg#bell"/></svg><svg class="i"><use href="assets/images/icons.svg#help"/></svg><img class="mock__avatar" src="assets/images/avatar.webp" alt=""></span>
+          </div>
+          <div class="mock__cols">
+            <div class="mock__col">
+              <div class="mock__col-head">AI-сотрудники <span>+ Добавить</span></div>
+              <div class="mock__item"><span class="mock__ico c-violet"><svg class="i"><use href="assets/images/icons.svg#code"/></svg></span><div class="grow"><b>Агент-разработчик</b><span class="mock__status">Активен</span><small>Разработка, интеграции, автоматизация</small></div></div>
+              <div class="mock__item"><span class="mock__ico c-green"><svg class="i"><use href="assets/images/icons.svg#feather"/></svg></span><div class="grow"><b>Агент-копирайтер</b><span class="mock__status">Активен</span><small>Тексты, статьи, письма, контент-планы</small></div></div>
+              <div class="mock__item"><span class="mock__ico c-blue"><svg class="i"><use href="assets/images/icons.svg#bars"/></svg></span><div class="grow"><b>Агент-аналитик</b><span class="mock__status">Активен</span><small>Аналитика, отчёты, визуализация</small></div></div>
+              <div class="mock__more">Смотреть всех сотрудников →</div>
+            </div>
+            <div class="mock__col">
+              <div class="mock__col-head">Задания <span>+ Новое задание</span></div>
+              <div class="mock__item"><div class="grow"><b>Обновить API документацию</b><div class="mock__task-meta"><small>Агент-разработчик</small><span class="badge badge--work">В работе</span></div><small>Сегодня, 12:30</small></div></div>
+              <div class="mock__item"><div class="grow"><b>Подготовить рассылку о продукте</b><div class="mock__task-meta"><small>Агент-копирайтер</small><span class="badge badge--done">Готово</span></div><small>Сегодня, 10:15</small></div></div>
+              <div class="mock__item"><div class="grow"><b>Еженедельный отчёт по метрикам</b><div class="mock__task-meta"><small>Агент-аналитик</small><span class="badge badge--plan">По расписанию</span></div><small>Завтра, 09:00</small></div></div>
+              <div class="mock__item"><div class="grow"><b>Анализ обратной связи клиентов</b><div class="mock__task-meta"><small>Агент-аналитик</small><span class="badge badge--work">В работе</span></div><small>Сегодня, 11:45</small></div></div>
+              <div class="mock__more">Все задания →</div>
+            </div>
+            <div class="mock__col">
+              <div class="mock__col-head">Результаты <span>Смотреть все</span></div>
+              <div class="mock__item"><span class="mock__ico c-red"><span class="mock__file">PDF</span></span><div class="grow"><b>API_Documentation_v2.pdf</b><small>Агент-разработчик</small><small>Сегодня, 12:45</small></div><svg class="i mock__check"><use href="assets/images/icons.svg#check-circle"/></svg></div>
+              <div class="mock__item"><span class="mock__ico c-blue"><span class="mock__file">DOCX</span></span><div class="grow"><b>Product_Newsletter.docx</b><small>Агент-копирайтер</small><small>Сегодня, 10:28</small></div><svg class="i mock__check"><use href="assets/images/icons.svg#check-circle"/></svg></div>
+              <div class="mock__item"><span class="mock__ico c-green"><span class="mock__file">XLSX</span></span><div class="grow"><b>Weekly_Report.xlsx</b><small>Агент-аналитик</small><small>Сегодня, 09:12</small></div><svg class="i mock__check"><use href="assets/images/icons.svg#check-circle"/></svg></div>
+              <div class="mock__item"><span class="mock__ico c-red"><span class="mock__file">PDF</span></span><div class="grow"><b>Customer_Insights.pdf</b><small>Агент-аналитик</small><small>Вчера, 18:40</small></div><svg class="i mock__check"><use href="assets/images/icons.svg#check-circle"/></svg></div>
+            </div>
+          </div>
+          <div class="mock__stats">
+            <div class="mock__stat"><svg class="i"><use href="assets/images/icons.svg#users"/></svg><div><b>12</b><small>AI-сотрудников</small></div></div>
+            <div class="mock__stat"><svg class="i"><use href="assets/images/icons.svg#clipboard"/></svg><div><b>28</b><small>Активных заданий</small></div></div>
+            <div class="mock__stat"><svg class="i" style="color:var(--green)"><use href="assets/images/icons.svg#check-circle"/></svg><div><b>156</b><small>Выполнено задач</small></div></div>
+            <div class="mock__stat"><svg class="i"><use href="assets/images/icons.svg#clock"/></svg><div><b>98%</b><small>Успешных запусков</small></div></div>
+          </div>
+        </div>
+      </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Не просто ответы ===== -->
+  <section class="section section--tight">
+    <div class="container">
+      <div class="section-head reveal">
+        <h2 class="h2">Не просто ответы. Выполненная работа.</h2>
+        <p class="lead">Вы говорите Нейропульту, что нужно сделать, — обычным текстом или голосом. Система сама подбирает агентов, инструменты и интеграции.</p>
+      </div>
+      <div class="steps steps--arrows">
+        <div class="step reveal"><span class="step__num">1</span><div><h3>Поставьте задачу</h3><p>Опишите, что нужно сделать и какой результат вы ожидаете.</p></div></div>
+        <div class="step reveal reveal-d1"><span class="step__num">2</span><div><h3>AI-сотрудник выполнит работу</h3><p>Агент возьмёт задачу в работу и выполнит её самостоятельно, используя ваши системы.</p></div></div>
+        <div class="step reveal reveal-d2"><span class="step__num">3</span><div><h3>Получите результат</h3><p>Готовый файл, публикация или отчёт появится в системе в нужное время.</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Всё необходимое ===== -->
+  <section class="section section--tight">
+    <div class="container">
+      <div class="panel reveal">
+        <div class="section-head" style="margin-bottom:36px">
+          <h2 class="h2">Всё необходимое для работы с AI&#8209;сотрудниками</h2>
+        </div>
+        <div class="grid grid--3">
+          <div class="card card--row card--hover"><span class="ico c-violet"><svg class="i"><use href="assets/images/icons.svg#list-checks"/></svg></span><div><h3>Ставьте задачи</h3><p>Создавайте разовые и регулярные задания в несколько кликов или одной фразой.</p></div></div>
+          <div class="card card--row card--hover"><span class="ico c-violet"><svg class="i"><use href="assets/images/icons.svg#user"/></svg></span><div><h3>Подключайте сотрудников</h3><p>Назначайте AI-сотрудников под задачи вашего бизнеса и отделов.</p></div></div>
+          <div class="card card--row card--hover"><span class="ico c-violet"><svg class="i"><use href="assets/images/icons.svg#file"/></svg></span><div><h3>Получайте результат</h3><p>Готовые файлы и отчёты появляются в системе автоматически.</p></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Цифровой штат ===== -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head reveal">
+        <h2 class="h2">Создайте цифровой штат под задачи вашей компании</h2>
+        <p class="lead">Каждый AI-сотрудник — это роль, набор навыков и доступов. Роли и возможности настраиваются под процессы компании.</p>
+      </div>
+      <div class="grid grid--3">
+        <article class="card card--hover agent-card reveal">
+          <div class="agent-card__head"><span class="ico c-violet"><svg class="i"><use href="assets/images/icons.svg#code"/></svg></span><div><h3>AI-разработчик</h3><p class="muted">Интеграции, автоматизация, скрипты, документация.</p></div></div>
+          <div class="tags"><span class="tag">API</span><span class="tag">Код</span><span class="tag">Автоматизация</span></div>
+        </article>
+        <a href="agent-copywriter.html" class="card card--hover agent-card reveal reveal-d1">
+          <div class="agent-card__head"><span class="ico c-green"><svg class="i"><use href="assets/images/icons.svg#feather"/></svg></span><div><h3>AI-копирайтер</h3><p class="muted">Тексты, статьи, письма, рассылки, контент-планы.</p></div></div>
+          <div class="tags"><span class="tag">Тексты</span><span class="tag">Рассылки</span><span class="tag">Контент-планы</span></div>
+          <span class="agent-card__arrow" aria-hidden="true"><svg class="i"><use href="assets/images/icons.svg#arrow-right"/></svg></span>
+        </a>
+        <article class="card card--hover agent-card reveal reveal-d2">
+          <div class="agent-card__head"><span class="ico c-blue"><svg class="i"><use href="assets/images/icons.svg#bars"/></svg></span><div><h3>AI-аналитик</h3><p class="muted">Отчёты, дашборды, анализ данных, выводы.</p></div></div>
+          <div class="tags"><span class="tag">Аналитика</span><span class="tag">Отчёты</span><span class="tag">Визуализация</span></div>
+        </article>
+        <article class="card card--hover agent-card reveal">
+          <div class="agent-card__head"><span class="ico c-teal"><svg class="i"><use href="assets/images/icons.svg#workflow"/></svg></span><div><h3>AI-оператор</h3><p class="muted">Работа с сервисами, таблицами, перенос и проверка данных.</p></div></div>
+          <div class="tags"><span class="tag">Сервисы</span><span class="tag">Таблицы</span><span class="tag">Проверка</span></div>
+        </article>
+        <article class="card card--hover agent-card reveal reveal-d1">
+          <div class="agent-card__head"><span class="ico c-pink"><svg class="i"><use href="assets/images/icons.svg#edit"/></svg></span><div><h3>AI-редактор</h3><p class="muted">Проверка, редактирование, улучшение текстов и файлов.</p></div></div>
+          <div class="tags"><span class="tag">Редактура</span><span class="tag">Проверка</span><span class="tag">Корректура</span></div>
+        </article>
+        <article class="card card--hover agent-card reveal reveal-d2">
+          <div class="agent-card__head"><span class="ico c-orange"><svg class="i"><use href="assets/images/icons.svg#globe"/></svg></span><div><h3>AI-менеджер сайта</h3><p class="muted">Публикации, обновления, структура, медиа и тексты.</p></div></div>
+          <div class="tags"><span class="tag">CMS</span><span class="tag">Публикации</span><span class="tag">Медиа</span></div>
+        </article>
+      </div>
+      <p class="muted reveal" style="text-align:center;margin-top:28px">Нужна другая роль? <a class="link-arrow" href="agents.html">Все AI-сотрудники <svg class="i"><use href="assets/images/icons.svg#arrow-right"/></svg></a></p>
+    </div>
+  </section>
+
+  <!-- ===== Режимы запуска ===== -->
+  <section class="section section--soft">
+    <div class="container">
+      <div class="section-head reveal">
+        <h2 class="h2">Работают тогда, когда это нужно</h2>
+        <p class="lead">Разовые поручения, регулярные отчёты по расписанию и очереди задач, которые выполняются по порядку.</p>
+      </div>
+      <div class="grid grid--3">
+        <div class="card mode-card reveal">
+          <div><h3>Разовое задание</h3><p class="muted" style="margin-top:6px">Для задач «сделать сейчас». AI-сотрудник выполнит и вернёт результат.</p></div>
+          <div class="fake-input">Написать пресс-релиз о запуске<span class="caret"></span></div>
+          <span class="btn btn--primary btn--sm" style="align-self:flex-start">Создать задание</span>
+        </div>
+        <div class="card mode-card reveal reveal-d1">
+          <div><h3>Работа по расписанию</h3><p class="muted" style="margin-top:6px">Выполняется автоматически по заданному расписанию.</p></div>
+          <div class="schedule-row"><span class="ico ico--sm c-violet"><svg class="i"><use href="assets/images/icons.svg#calendar"/></svg></span><div><b>Еженедельный отчёт по продажам</b><small>Каждый понедельник в 09:00</small></div><button class="toggle" type="button" aria-pressed="true" aria-label="Включить расписание"></button></div>
+          <div class="schedule-row"><span class="ico ico--sm c-green"><svg class="i"><use href="assets/images/icons.svg#search"/></svg></span><div><b>Мониторинг упоминаний бренда</b><small>Ежедневно в 18:00</small></div><button class="toggle" type="button" aria-pressed="false" aria-label="Включить расписание"></button></div>
+        </div>
+        <div class="card mode-card reveal reveal-d2">
+          <div><h3>Очередь заданий</h3><p class="muted" style="margin-top:6px">Задачи ставятся в очередь и выполняются по порядку.</p></div>
+          <ol class="queue">
+            <li>Подготовить аналитику рынка<span class="grip">⋮⋮</span></li>
+            <li>Написать текст для лендинга<span class="grip">⋮⋮</span></li>
+            <li>Сформировать контент-план<span class="grip">⋮⋮</span></li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Вся работа под контролем ===== -->
+  <section class="section">
+    <div class="container split">
+      <div class="reveal">
+        <h2 class="h2">Вся работа под контролем</h2>
+        <p class="lead muted" style="margin-top:16px">Кто что делает, на каком этапе задание и где лежит результат — видно в одном окне.</p>
+        <ul class="feature-list">
+          <li><span class="ico ico--sm c-violet"><svg class="i"><use href="assets/images/icons.svg#code"/></svg></span><div><b>Разработка</b><small>Код, интеграции, скрипты</small></div></li>
+          <li><span class="ico ico--sm c-orange"><svg class="i"><use href="assets/images/icons.svg#feather"/></svg></span><div><b>Контент</b><small>Тексты, письма, публикации</small></div></li>
+          <li><span class="ico ico--sm c-green"><svg class="i"><use href="assets/images/icons.svg#bars"/></svg></span><div><b>Аналитика</b><small>Отчёты, дашборды, выводы</small></div></li>
+          <li><span class="ico ico--sm c-blue"><svg class="i"><use href="assets/images/icons.svg#table"/></svg></span><div><b>Операционные задачи</b><small>Таблицы, проверки, сервисы</small></div></li>
+        </ul>
+      </div>
+
+      <div class="mock-frame reveal reveal-d1" data-mock-width="960">
+      <div class="mock mock--wide" role="img" aria-label="Интерфейс Нейропульта: контроль заданий">
+        <aside class="mock__side">
+          <img class="mock__logo" src="assets/images/logo.svg" alt="">
+          <span class="mock__nav-item is-active"><svg class="i"><use href="assets/images/icons.svg#users"/></svg>AI-сотрудники</span>
+          <span class="mock__nav-item"><svg class="i"><use href="assets/images/icons.svg#list"/></svg>Задания</span>
+          <span class="mock__nav-item"><svg class="i"><use href="assets/images/icons.svg#calendar"/></svg>Расписания</span>
+          <span class="mock__nav-item"><svg class="i"><use href="assets/images/icons.svg#chart"/></svg>Результаты</span>
+          <span class="mock__nav-item"><svg class="i"><use href="assets/images/icons.svg#history"/></svg>История</span>
+          <span class="mock__nav-item"><svg class="i"><use href="assets/images/icons.svg#settings"/></svg>Настройки</span>
+          <div class="mock__workspace"><svg class="i"><use href="assets/images/icons.svg#building"/></svg><div><small>Рабочее пространство</small>Маркетинг</div></div>
+        </aside>
+        <div class="mock__main">
+          <div class="mock__cols">
+            <div class="mock__col">
+              <div class="mock__col-head">AI-сотрудники</div>
+              <div class="mock__item"><span class="mock__ico c-violet"><svg class="i"><use href="assets/images/icons.svg#code"/></svg></span><div class="grow"><b>Агент-разработчик</b><span class="mock__status">Активен</span></div></div>
+              <div class="mock__item"><span class="mock__ico c-green"><svg class="i"><use href="assets/images/icons.svg#feather"/></svg></span><div class="grow"><b>Агент-копирайтер</b><span class="mock__status">Активен</span></div></div>
+              <div class="mock__item"><span class="mock__ico c-blue"><svg class="i"><use href="assets/images/icons.svg#bars"/></svg></span><div class="grow"><b>Агент-аналитик</b><span class="mock__status">Активен</span></div></div>
+              <div class="mock__item"><span class="mock__ico c-orange"><svg class="i"><use href="assets/images/icons.svg#globe"/></svg></span><div class="grow"><b>Агент-оператор</b><span class="mock__status">Активен</span></div></div>
+            </div>
+            <div class="mock__col">
+              <div class="mock__col-head">Активные задания</div>
+              <div class="mock__item"><div class="grow"><b>Обновить API документацию</b><small>Агент-разработчик · осталось ~20 мин</small><div class="mock__progress"><span style="width:70%"></span></div></div></div>
+              <div class="mock__item"><div class="grow"><b>Еженедельный отчёт по метрикам</b><small>Агент-аналитик · осталось ~30 мин</small><div class="mock__progress"><span style="width:45%"></span></div></div></div>
+              <div class="mock__item"><div class="grow"><b>Анализ обратной связи</b><small>Агент-аналитик · осталось ~40 мин</small><div class="mock__progress"><span style="width:30%"></span></div></div></div>
+              <div class="mock__more">Все задания →</div>
+            </div>
+            <div class="mock__col">
+              <div class="mock__col-head">Расписания</div>
+              <div class="mock__item"><span class="mock__ico c-violet" style="width:28px;height:28px"><svg class="i"><use href="assets/images/icons.svg#calendar"/></svg></span><div class="grow"><b>Еженедельный отчёт</b><small>Пн, 09:00</small></div></div>
+              <div class="mock__item"><span class="mock__ico c-green" style="width:28px;height:28px"><svg class="i"><use href="assets/images/icons.svg#search"/></svg></span><div class="grow"><b>Мониторинг упоминаний</b><small>Ежедневно, 18:00</small></div></div>
+              <div class="mock__item"><span class="mock__ico c-blue" style="width:28px;height:28px"><svg class="i"><use href="assets/images/icons.svg#database"/></svg></span><div class="grow"><b>Экспорт данных</b><small>1-го числа</small></div></div>
+            </div>
+          </div>
+          <div class="mock__row2">
+            <div class="mock__col">
+              <div class="mock__col-head">Последние результаты</div>
+              <div class="mock__item"><span class="mock__ico c-red" style="width:28px;height:28px"><span class="mock__file">PDF</span></span><div class="grow"><b>API_Documentation_v2.pdf</b><small>Сегодня, 12:45</small></div></div>
+              <div class="mock__item"><span class="mock__ico c-green" style="width:28px;height:28px"><span class="mock__file">XLSX</span></span><div class="grow"><b>Weekly_Report.xlsx</b><small>Сегодня, 09:12</small></div></div>
+            </div>
+            <div class="mock__col">
+              <div class="mock__col-head">История активности</div>
+              <ul class="activity">
+                <li><time>12:45</time><span>Агент-разработчик завершил «Обновить API документацию»</span></li>
+                <li><time>10:28</time><span>Агент-копирайтер завершил «Product Newsletter»</span></li>
+                <li><time>09:12</time><span>Агент-аналитик завершил «Weekly Report»</span></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Рутинная работа ===== -->
+  <section class="section section--soft">
+    <div class="container">
+      <div class="section-head reveal">
+        <h2 class="h2">Поручите AI рутинную и операционную работу</h2>
+        <p class="lead">Нейропульт закрывает большой круг повседневных цифровых задач бизнеса.</p>
+      </div>
+      <div class="routine">
+        <div class="card card--hover reveal"><span class="ico ico--sm c-green"><svg class="i"><use href="assets/images/icons.svg#feather"/></svg></span><div><h3>Контент</h3><p>Статьи, тексты, рассылки, описания, контент-планы.</p></div></div>
+        <div class="card card--hover reveal reveal-d1"><span class="ico ico--sm c-blue"><svg class="i"><use href="assets/images/icons.svg#globe"/></svg></span><div><h3>Сайты</h3><p>Создание, публикация, домены, обновления и медиа.</p></div></div>
+        <div class="card card--hover reveal reveal-d2"><span class="ico ico--sm c-violet"><svg class="i"><use href="assets/images/icons.svg#languages"/></svg></span><div><h3>Локализация</h3><p>Переводы и адаптация контента под рынки.</p></div></div>
+        <div class="card card--hover reveal reveal-d3"><span class="ico ico--sm c-blue"><svg class="i"><use href="assets/images/icons.svg#bars"/></svg></span><div><h3>AI-аналитик</h3><p>Отчёты, дашборды, выводы и рекомендации.</p></div></div>
+        <div class="card card--hover reveal"><span class="ico ico--sm c-violet"><svg class="i"><use href="assets/images/icons.svg#code"/></svg></span><div><h3>Разработка</h3><p>Код, репозитории, серверы, автоматизация процессов.</p></div></div>
+        <div class="card card--hover reveal reveal-d1"><span class="ico ico--sm c-teal"><svg class="i"><use href="assets/images/icons.svg#search"/></svg></span><div><h3>SEO и GEO</h3><p>Оптимизация, мета-данные, анализ поисковой выдачи.</p></div></div>
+        <div class="card card--hover reveal reveal-d2"><span class="ico ico--sm c-orange"><svg class="i"><use href="assets/images/icons.svg#file"/></svg></span><div><h3>Документы</h3><p>Шаблоны, отчёты, проверки, обработка файлов.</p></div></div>
+        <div class="card card--hover reveal reveal-d3"><span class="ico ico--sm c-pink"><svg class="i"><use href="assets/images/icons.svg#settings"/></svg></span><div><h3>Операционные процессы</h3><p>CRM, таблицы, проверки, работа с сервисами.</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Работает в фоне ===== -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head reveal">
+        <h2 class="h2">Работает в фоне. Даже когда компьютер выключен.</h2>
+        <p class="lead">Нейропульт работает на сервере — задачи не прерываются, когда вы закрываете ноутбук.</p>
+      </div>
+      <div class="bgwork">
+        <div class="bgwork__laptop reveal"><img src="assets/images/laptop.webp" alt="Закрытый ноутбук — работа продолжается на сервере" width="900" height="585" loading="lazy"></div>
+        <div class="status-card reveal reveal-d1">
+          <h3>Нейропульт — Статус</h3>
+          <div class="status-row"><svg class="i"><use href="assets/images/icons.svg#clipboard"/></svg>Активные задания<b>28</b></div>
+          <div class="status-row"><svg class="i"><use href="assets/images/icons.svg#play"/></svg>Выполняются сейчас<b>8</b></div>
+          <div class="status-row"><svg class="i"><use href="assets/images/icons.svg#clock"/></svg>Следующие по расписанию<b>15</b></div>
+          <div class="status-row"><span class="dot"></span>Система работает<b style="color:var(--green);font-weight:600">Онлайн</b></div>
+        </div>
+        <div class="status-card reveal reveal-d2">
+          <h3>Примеры работающих заданий</h3>
+          <div class="example-row"><span class="ico ico--sm c-violet"><svg class="i"><use href="assets/images/icons.svg#chart"/></svg></span><div><b>Отчёт по продажам</b><small>Осталось ~32 мин</small></div><span class="badge badge--work">В работе</span></div>
+          <div class="example-row"><span class="ico ico--sm c-green"><svg class="i"><use href="assets/images/icons.svg#search"/></svg></span><div><b>Мониторинг бренда</b><small>Осталось ~12 мин</small></div><span class="badge badge--work">В работе</span></div>
+          <div class="example-row"><span class="ico ico--sm c-blue"><svg class="i"><use href="assets/images/icons.svg#database"/></svg></span><div><b>Обновление базы</b><small>Осталось ~45 мин</small></div><span class="badge badge--work">В работе</span></div>
+        </div>
+        <div class="reveal reveal-d3">
+          <div class="phone">
+            <div class="phone__screen">
+              <div class="phone__brand"><img src="assets/images/logo.svg" alt="">Нейропульт</div>
+              <div class="phone__card"><small>Статус системы</small><span class="badge badge--done">Система работает</span></div>
+              <div class="phone__card"><small>Активные задания</small><b>28</b></div>
+              <div class="phone__card"><small>Следующее по расписанию</small><b style="font-size:13px">Отчёт · 09:00</b></div>
+              <div class="phone__btn">Открыть пульт</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="grid grid--3" style="margin-top:40px">
+        <div class="card card--row card--compact reveal"><span class="ico ico--sm c-violet"><svg class="i"><use href="assets/images/icons.svg#clock"/></svg></span><div><h3>Длинные задачи не прерываются</h3><p>Работа продолжается до завершения.</p></div></div>
+        <div class="card card--row card--compact reveal reveal-d1"><span class="ico ico--sm c-violet"><svg class="i"><use href="assets/images/icons.svg#calendar"/></svg></span><div><h3>Работа по расписанию</h3><p>AI-сотрудники запускаются автоматически.</p></div></div>
+        <div class="card card--row card--compact reveal reveal-d2"><span class="ico ico--sm c-violet"><svg class="i"><use href="assets/images/icons.svg#phone"/></svg></span><div><h3>Доступ из браузера</h3><p>Управляйте с любого устройства.</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Интеграции ===== -->
+  <section class="section section--tint">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow"><svg class="i"><use href="assets/images/icons.svg#plug"/></svg>AI-слой поверх вашей инфраструктуры</span>
+        <h2 class="h2">Подключается к системам, которые у вас уже есть</h2>
+        <p class="lead">Нейропульт не заменяет CRM, 1С и CMS — он работает поверх них и использует их как инструменты.</p>
+      </div>
+      <div class="integr">
+        <div class="integr__list">
+          <div class="integr__item reveal"><span class="ico ico--sm c-blue"><svg class="i"><use href="assets/images/icons.svg#users"/></svg></span><div>Bitrix24 и amoCRM<small>Сделки, контакты, задачи</small></div></div>
+          <div class="integr__item reveal reveal-d1"><span class="ico ico--sm c-orange"><svg class="i"><use href="assets/images/icons.svg#database"/></svg></span><div>1С<small>Документы и учётные данные</small></div></div>
+          <div class="integr__item reveal reveal-d2"><span class="ico ico--sm c-green"><svg class="i"><use href="assets/images/icons.svg#globe"/></svg></span><div>Сайты и приложения<small>CMS, публикации, домены</small></div></div>
+          <div class="integr__item reveal reveal-d3"><span class="ico ico--sm c-violet"><svg class="i"><use href="assets/images/icons.svg#folder"/></svg></span><div>Файлы и базы знаний<small>Документы компании</small></div></div>
+        </div>
+        <div class="integr__core reveal"><img class="float" src="assets/images/core.webp" alt="Нейропульт — центральный AI-контур" width="900" height="789" loading="lazy"></div>
+        <div class="integr__list integr__list--right">
+          <div class="integr__item reveal"><span class="ico ico--sm c-blue"><svg class="i"><use href="assets/images/icons.svg#send"/></svg></span><div>Telegram, MAX, WhatsApp<small>Каналы общения с клиентами</small></div></div>
+          <div class="integr__item reveal reveal-d1"><span class="ico ico--sm c-teal"><svg class="i"><use href="assets/images/icons.svg#git"/></svg></span><div>Репозитории и серверы<small>Git, деплой, мониторинг</small></div></div>
+          <div class="integr__item reveal reveal-d2"><span class="ico ico--sm c-pink"><svg class="i"><use href="assets/images/icons.svg#plug"/></svg></span><div>API и MCP<small>Любые внешние инструменты</small></div></div>
+          <div class="integr__item reveal reveal-d3"><span class="ico ico--sm c-violet"><svg class="i"><use href="assets/images/icons.svg#sparkles"/></svg></span><div>AI-провайдеры<small>и локальные модели on-prem</small></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Размещение ===== -->
+  <section class="section">
+    <div class="container">
+      <div class="split split--even">
+        <div class="reveal">
+          <h2 class="h2">На сервере компании или в выделенном облаке</h2>
+          <p class="lead muted" style="margin-top:16px">В обоих вариантах клиент получает отдельный рабочий контур Нейропульта — со своими пользователями, данными и настройками.</p>
+          <a class="link-arrow" style="margin-top:24px" href="security.html">Подробнее о безопасности <svg class="i"><use href="assets/images/icons.svg#arrow-right"/></svg></a>
+        </div>
+        <div class="grid" style="gap:16px">
+          <div class="card deploy-card reveal"><img src="assets/images/server.webp" alt="" width="484" height="900" loading="lazy"><div><h3>На сервере заказчика</h3><p>Устанавливаем систему в вашей инфраструктуре. Свои AI-провайдеры, ключи и локальные модели — данные остаются внутри компании.</p></div></div>
+          <div class="card deploy-card reveal reveal-d1"><img src="assets/images/cloud.webp" alt="" width="900" height="663" loading="lazy"><div><h3>Выделенное облако</h3><p>Разворачиваем на поддомене <b>company.neuropult.ru</b> с полной изоляцией. AI-ресурс и сопровождение — на нашей стороне.</p></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Контроль ===== -->
+  <section class="section section--soft">
+    <div class="container">
+      <div class="section-head reveal">
+        <h2 class="h2">AI работает. Компания контролирует.</h2>
+        <p class="lead">Права, история, подтверждения и остановка — каждое действие AI-сотрудника прозрачно.</p>
+      </div>
+      <div class="grid grid--3">
+        <div class="card card--row card--hover reveal"><span class="ico c-violet"><svg class="i"><use href="assets/images/icons.svg#users"/></svg></span><div><h3>Управление доступом</h3><p>Гибкие роли и права для сотрудников и команд.</p></div></div>
+        <div class="card card--row card--hover reveal reveal-d1"><span class="ico c-violet"><svg class="i"><use href="assets/images/icons.svg#history"/></svg></span><div><h3>История действий</h3><p>Полная история всех действий в системе.</p></div></div>
+        <div class="card card--row card--hover reveal reveal-d2"><span class="ico c-violet"><svg class="i"><use href="assets/images/icons.svg#eye"/></svg></span><div><h3>Просмотр изменений</h3><p>Отслеживайте, кто и что изменил в заданиях и результатах.</p></div></div>
+        <div class="card card--row card--hover reveal"><span class="ico c-violet"><svg class="i"><use href="assets/images/icons.svg#stop"/></svg></span><div><h3>Остановка задания</h3><p>Приостановка при необходимости в один клик.</p></div></div>
+        <div class="card card--row card--hover reveal reveal-d1"><span class="ico c-violet"><svg class="i"><use href="assets/images/icons.svg#layers"/></svg></span><div><h3>Рабочие пространства</h3><p>Разделяйте проекты и команды по пространствам.</p></div></div>
+        <div class="card card--row card--hover reveal reveal-d2"><span class="ico c-violet"><svg class="i"><use href="assets/images/icons.svg#shield-check"/></svg></span><div><h3>Подтверждение действий</h3><p>Критичные действия требуют подтверждения человеком.</p></div></div>
+      </div>
+      <div class="notice reveal" style="margin-top:28px"><svg class="i"><use href="assets/images/icons.svg#shield-check"/></svg>Не бесконтрольная автономность, а управляемая цифровая работа.</div>
+    </div>
+  </section>
+
+  <!-- ===== Тарифы ===== -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head reveal">
+        <h2 class="h2">Тарифы без искусственных ограничений</h2>
+        <p class="lead">Полный функционал на любом тарифе — различается только объём AI-ресурса. При оплате за год 2 месяца бесплатно.</p>
+      </div>
+      <div class="grid grid--3">
+        <a href="pricing.html#plans" class="card card--hover plan-mini reveal"><span class="eco-card__role" style="align-self:flex-start">Базовый AI-ресурс</span><h3>Старт</h3><p>Для собственника и небольшой команды.</p><div class="plan-mini__price">20 000 ₽ <small>/ мес</small></div></a>
+        <a href="pricing.html#plans" class="card card--hover plan-mini reveal reveal-d1" style="border-color:var(--brand-200)"><span class="eco-card__role" style="align-self:flex-start">Увеличенный AI-ресурс</span><h3>Стандарт</h3><p>Для команд и отделов компании.</p><div class="plan-mini__price">100 000 ₽ <small>/ мес</small></div></a>
+        <a href="pricing.html#plans" class="card card--hover plan-mini reveal reveal-d2"><span class="eco-card__role" style="align-self:flex-start">Максимальный AI-ресурс</span><h3>Максимум</h3><p>Для всей компании и больших объёмов работы.</p><div class="plan-mini__price">200 000 ₽ <small>/ мес</small></div></a>
+      </div>
+      <p class="muted reveal" style="text-align:center;margin-top:28px">Нужна установка на своих серверах? <a class="link-arrow" href="enterprise.html">Enterprise-решения для крупных организаций <svg class="i"><use href="assets/images/icons.svg#arrow-right"/></svg></a></p>
+    </div>
+  </section>
+
+  <!-- ===== Начать ===== -->
+  <section class="section section--tint">
+    <div class="container">
+      <div class="section-head reveal">
+        <h2 class="h2">Начните с одного понятного процесса</h2>
+        <p class="lead">Пилот на одной задаче покажет результат за пару недель — дальше масштабируйте на команду.</p>
+      </div>
+      <ol class="timeline reveal">
+        <li><span class="step__num">1</span>Выберите процесс</li>
+        <li><span class="step__num">2</span>Опишите задачу</li>
+        <li><span class="step__num">3</span>Подключите AI&#8209;сотрудника</li>
+        <li><span class="step__num">4</span>Запустите пилот</li>
+        <li><span class="step__num">5</span>Проверьте результат</li>
+        <li><span class="step__num">6</span>Отладьте процесс</li>
+        <li><span class="step__num">7</span>Масштабируйте на команду</li>
+      </ol>
+      <div class="hero__actions reveal" style="justify-content:center;margin-top:48px">
+        <a class="btn btn--primary btn--lg" href="demo.html">Обсудить пилот</a>
+        <a class="btn btn--ghost btn--lg" href="how-it-works.html">Посмотреть демо</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FAQ ===== -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head reveal"><h2 class="h2">Вопросы и ответы</h2></div>
+      <div class="faq reveal">
+        <details>
+          <summary>Что такое Нейропульт?<svg class="i"><use href="assets/images/icons.svg#chevron-down"/></svg></summary>
+          <div class="faq__body"><p>Корпоративный AI-контур для бизнеса — единая среда, через которую компания управляет искусственным интеллектом, AI-агентами, заданиями, сценариями, файлами, интеграциями и внешними каналами.</p></div>
+        </details>
+        <details>
+          <summary>Что такое AI-сотрудник?<svg class="i"><use href="assets/images/icons.svg#chevron-down"/></svg></summary>
+          <div class="faq__body"><p>Это AI-агент с определённой ролью, навыками и доступами: например, копирайтер, аналитик или разработчик. Ему можно поручать задачи обычным языком — текстом или голосом, — и он выполнит их, используя подключённые системы.</p></div>
+        </details>
+        <details>
+          <summary>Какие задания можно поручать?<svg class="i"><use href="assets/images/icons.svg#chevron-down"/></svg></summary>
+          <div class="faq__body"><p>Создание и ведение сайтов, ботов, работу с CRM, контент, SEO и SMM, презентации и дизайн, документы, аналитику, работу с кодом и серверами, регулярные и событийные сценарии.</p></div>
+        </details>
+        <details>
+          <summary>Нужно ли держать компьютер включённым?<svg class="i"><use href="assets/images/icons.svg#chevron-down"/></svg></summary>
+          <div class="faq__body"><p>Нет. Нейропульт работает на сервере: задания и расписания выполняются, даже когда ваш компьютер выключен. Управлять можно из браузера с любого устройства.</p></div>
+        </details>
+        <details>
+          <summary>Заменяет ли Нейропульт CRM, 1С или CMS?<svg class="i"><use href="assets/images/icons.svg#chevron-down"/></svg></summary>
+          <div class="faq__body"><p>Нет. Нейропульт — AI-слой поверх существующей инфраструктуры. Он подключается к Bitrix24, amoCRM, 1С, сайтам и другим системам и работает с ними как с инструментами.</p></div>
+        </details>
+        <details>
+          <summary>Где хранятся данные и как обеспечена безопасность?<svg class="i"><use href="assets/images/icons.svg#chevron-down"/></svg></summary>
+          <div class="faq__body"><p>В облачных тарифах каждый клиент получает изолированный контур на собственном поддомене. В редакциях On-Prem система устанавливается в инфраструктуре заказчика и работает с его AI-провайдерами или локальными моделями. <a class="text-brand" href="security.html">Подробнее о безопасности</a>.</p></div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CTA ===== -->
+  <section class="section section--tight" style="padding-top:0">
+    <div class="container">
+      <div class="cta reveal">
+        <div>
+          <h2>Создайте цифровой штат. Управляйте им через Нейропульт.</h2>
+          <p>Поручите AI-сотрудникам рутину, контролируйте результат и сосредоточьтесь на развитии бизнеса.</p>
+          <div class="hero__actions">
+            <a class="btn btn--primary" href="demo.html">Обсудить пилот</a>
+            <a class="btn btn--ghost" href="demo.html">Запросить демонстрацию</a>
+          </div>
+        </div>
+        <div class="cta__visual" aria-hidden="true">
+          <div class="mock">
+            <aside class="mock__side">
+              <img class="mock__logo" src="assets/images/logo.svg" alt="">
+              <span class="mock__nav-item is-active"><svg class="i"><use href="assets/images/icons.svg#home"/></svg>Дашборд</span>
+              <span class="mock__nav-item"><svg class="i"><use href="assets/images/icons.svg#users"/></svg>AI-сотрудники</span>
+              <span class="mock__nav-item"><svg class="i"><use href="assets/images/icons.svg#list"/></svg>Задания</span>
+              <span class="mock__nav-item"><svg class="i"><use href="assets/images/icons.svg#calendar"/></svg>Расписания</span>
+              <span class="mock__nav-item"><svg class="i"><use href="assets/images/icons.svg#chart"/></svg>Результаты</span>
+            </aside>
+            <div class="mock__main">
+              <div class="mock__top"><span class="mock__title">Дашборд</span><span class="mock__top-actions"><svg class="i"><use href="assets/images/icons.svg#bell"/></svg><img class="mock__avatar" src="assets/images/avatar.webp" alt=""></span></div>
+              <div class="mock__cols">
+                <div class="mock__col">
+                  <div class="mock__col-head">AI-сотрудники</div>
+                  <div class="mock__item"><span class="mock__ico c-violet"><svg class="i"><use href="assets/images/icons.svg#code"/></svg></span><div class="grow"><b>Агент-разработчик</b><span class="mock__status">Активен</span></div></div>
+                  <div class="mock__item"><span class="mock__ico c-green"><svg class="i"><use href="assets/images/icons.svg#feather"/></svg></span><div class="grow"><b>Агент-копирайтер</b><span class="mock__status">Активен</span></div></div>
+                </div>
+                <div class="mock__col">
+                  <div class="mock__col-head">Задания</div>
+                  <div class="mock__item"><div class="grow"><b>Обновить API документацию</b><div class="mock__task-meta"><small>Разработчик</small><span class="badge badge--work">В работе</span></div></div></div>
+                  <div class="mock__item"><div class="grow"><b>Рассылка о продукте</b><div class="mock__task-meta"><small>Копирайтер</small><span class="badge badge--done">Готово</span></div></div></div>
+                </div>
+                <div class="mock__col">
+                  <div class="mock__col-head">Результаты</div>
+                  <div class="mock__item"><span class="mock__ico c-red"><span class="mock__file">PDF</span></span><div class="grow"><b>API_Docs_v2.pdf</b><small>12:45</small></div></div>
+                  <div class="mock__item"><span class="mock__ico c-blue"><span class="mock__file">DOCX</span></span><div class="grow"><b>Newsletter.docx</b><small>10:28</small></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="logo"><img src="assets/images/logo.svg" alt="" width="28" height="28">Нейропульт</a>
+        <p>AI-контур для бизнеса. Пульт управления AI-сотрудниками компании.</p>
+      </div>
+      <div class="footer-col"><h4>Продукт</h4><ul><li><a href="features.html">Возможности</a></li><li><a href="how-it-works.html">Как работает</a></li><li><a href="agents.html">AI-сотрудники</a></li><li><a href="pricing.html">Тарифы</a></li></ul></div>
+      <div class="footer-col"><h4>Решения</h4><ul><li><a href="solutions.html">Для кого</a></li><li><a href="security.html">Безопасность</a></li><li><a href="enterprise.html">Enterprise-решения</a></li><li><a href="enterprise.html#plans">Тарифы On-Prem</a></li></ul></div>
+      <div class="footer-col"><h4>Компания</h4><ul><li><a href="demo.html">Запросить демо</a></li><li><a href="demo.html#contacts">Контакты</a></li><li><a href="login.html">Вход для клиентов</a></li></ul></div>
+      <div class="footer-col"><h4>Связаться</h4><ul><li><a href="mailto:hello@neuropult.ru">hello@neuropult.ru</a></li><li><a href="https://neuropult.ru">neuropult.ru</a></li></ul></div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span data-current-year>2026</span> Нейропульт. Все права защищены.</span>
+      <span><a href="#">Политика конфиденциальности</a> · <a href="#">Условия использования</a></span>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/main.js?v=1792591641" defer></script>
+</body>
+</html>

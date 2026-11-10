@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Вход — Нейропульт</title>
+  <meta name="description" content="Вход в рабочий контур Нейропульта вашей компании.">
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css?v=1792591641">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container site-header__inner">
+    <a href="index.html" class="logo" aria-label="Нейропульт — на главную"><img src="assets/images/logo.svg" alt="" width="28" height="28">Нейропульт</a>
+    <nav class="nav" aria-label="Основная навигация">
+      <a class="nav__link" href="features.html">Возможности</a>
+      <a class="nav__link" href="how-it-works.html">Как работает</a>
+      <a class="nav__link" href="agents.html">AI-сотрудники</a>
+      <a class="nav__link" href="solutions.html">Для кого</a>
+      <a class="nav__link" href="pricing.html">Тарифы</a>
+      <a class="nav__link" href="enterprise.html">Enterprise</a>
+    </nav>
+    <div class="header-actions">
+      <a class="login" href="login.html">Войти</a>
+      <a class="btn btn--primary btn--sm" href="demo.html">Запросить демо</a>
+      <button class="burger" type="button" aria-label="Меню" aria-expanded="false" aria-controls="mobile-menu"><svg class="i i--lg"><use href="assets/images/icons.svg#menu"/></svg></button>
+    </div>
+  </div>
+</header>
+<div class="mobile-menu" id="mobile-menu">
+  <a href="features.html">Возможности</a>
+  <a href="how-it-works.html">Как работает</a>
+  <a href="agents.html">AI-сотрудники</a>
+  <a href="solutions.html">Для кого</a>
+  <a href="pricing.html">Тарифы</a>
+  <a href="enterprise.html">Enterprise</a>
+  <a href="login.html" aria-current="page">Войти</a>
+  <a class="btn btn--primary btn--lg" href="demo.html">Запросить демо</a>
+</div>
+
+<main class="auth page-hero">
+  <div class="container">
+    <div class="auth__card reveal">
+      <img class="logo-mark" src="assets/images/logo.svg" alt="" width="56" height="56">
+      <h1 class="h3" style="font-size:28px">Вход в Нейропульт</h1>
+      <p class="muted" style="margin-top:10px">Укажите адрес рабочего контура вашей компании</p>
+      <form data-login novalidate>
+        <label class="visually-hidden" for="ws">Адрес рабочего контура</label>
+        <div class="domain-input"><input id="ws" type="text" placeholder="company" autocomplete="off" autocapitalize="off" spellcheck="false"><span>.neuropult.ru</span></div>
+        <button class="btn btn--primary btn--lg btn--block" style="margin-top:16px" type="submit">Продолжить<svg class="i"><use href="assets/images/icons.svg#arrow-right"/></svg></button>
+      </form>
+      <p class="muted" style="margin-top:24px;font-size:14.5px">On-Prem установка? Используйте адрес, который выдал ваш ИТ-отдел.</p>
+      <p style="margin-top:20px;padding-top:20px;border-top:1px solid var(--line);font-size:15px">Ещё нет Нейропульта? <a class="text-brand" style="font-weight:600" href="demo.html">Запросить демо</a></p>
+    </div>
+  </div>
+</main>
+
+<script src="assets/js/main.js?v=1792591641" defer></script>
+</body>
+</html>
